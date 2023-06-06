@@ -1,0 +1,100 @@
+{
+	"componentName": "drag-navigation-subsection",
+	"name": "分段器",
+	"description": "一般用于用户从几个选项中选择某一个的场景",
+    "order": "2",
+	"props": [
+		{
+			"label": "选项",
+			"description": "",
+			"key": "list",
+			"type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "text",
+                "itemDefault": "选项"
+            },
+			"default": [
+                "选项1",
+                "选项2",
+                "选项3"
+            ]
+		},
+		{
+			"label": "选项模式",
+			"description": "",
+			"key": "mode",
+			"type": "String",
+			"default": "button",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "按钮", "value": "button"},
+                    { "label": "分段器", "value": "subsection"}
+                ]
+            } 
+		},
+		{
+			"label": "默认选中索引值",
+			"description": "为索引，以0开始",
+			"key": "current",
+			"type": "Number",
+			"default": 0
+		},
+		{
+			"label": "字体大小",
+			"description": "",
+			"key": "fontSize",
+			"type": "String",
+			"default": "12px",
+			"inputType": "size",
+            "sectionMode": "fontSize"
+		},
+		{
+			"label": "激活时颜色",
+			"description": "",
+			"key": "activeColor",
+			"type": "String",
+			"default": "#3c9cff",
+			"inputType": "color"
+		},
+		{
+			"label": "未激活时颜色",
+			"description": "",
+			"key": "inactiveColor",
+			"type": "String",
+			"default": "#303133",
+			"inputType": "color"
+		},
+		{
+			"label": "模式为按钮时组件背景颜色",
+			"description": "",
+			"key": "bgColor",
+			"type": "String",
+			"default": "#eeeeef",
+			"inputType": "color"
+		},
+		{
+			"label": "从list属性对象中读取的键名",
+			"description": "如list属性为数组对象格式，将以此键名读取对象属性作为菜单名称",
+			"key": "keyName",
+			"type": "String",
+			"default": ""
+		},
+		{
+			"label": "激活选项字体加粗",
+			"description": "",
+			"key": "bold",
+			"type": "Boolean",
+			"default": true
+		}
+	],
+	"events": [
+        {
+        	"label": "标签索引改变时触发",
+        	"key": "change",
+        	"description": "$event为{ index: 标签索引值，item: 当前索引对应的选项数据 }",
+        	"params": []
+        }
+	]
+}

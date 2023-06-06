@@ -1,0 +1,76 @@
+{
+	"componentName": "drag-navigation-link",
+	"name": "超链接",
+	"description": "在APP平台会通过plus环境打开内置浏览器。在小程序中把链接复制到粘贴板，同时提示信息。在H5中通过window.open打开链接",
+    "order": "10",
+    "canvasSelectedMode": "cover",
+	"props": [
+        {
+        	"label": "文字",
+        	"description": "",
+        	"key": "text",
+        	"type": "String",
+            "inputType": "text",
+        	"default": "文字"
+        },
+        {
+        	"label": "文字颜色",
+        	"description": "",
+        	"key": "color",
+        	"type": "String",
+        	"default": "blue",
+        	"inputType": "color"
+        },
+        {
+        	"label": "字体大小",
+        	"description": "",
+        	"key": "fontSize",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "15px",
+            "sectionMode": "fontSize"
+        },
+        {
+        	"label": "跳转的链接",
+        	"description": "要带上http(s)",
+        	"key": "href",
+        	"type": "String",
+        	"inputType": "text",
+        	"default": ""
+        },
+        {
+        	"label": "显示下划线",
+        	"description": "",
+        	"key": "underLine",
+        	"type": "Boolean",
+        	"inputType": "boolean",
+        	"default": false
+        },
+        {
+        	"label": "下划线颜色",
+        	"description": "",
+        	"key": "lineColor",
+        	"type": "String",
+        	"default": "blue",
+        	"inputType": "color",
+            "must": {
+                "key": "underLine",
+                "value": [true]
+            }
+        },
+        {
+        	"label": "小程序平台把链接复制到粘贴板后的提示语",
+        	"description": "",
+        	"key": "mpTips",
+        	"type": "String",
+            "inputType": "text",
+        	"default": "链接已复制，请在浏览器打开"
+        }
+	],
+	"events": [
+		
+	],
+    "slot": {
+        "default": "组件底部"
+    } 
+}

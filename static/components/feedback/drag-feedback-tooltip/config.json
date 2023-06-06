@@ -1,0 +1,108 @@
+{
+	"componentName": "drag-feedback-tooltip",
+	"name": "长按提示",
+	"description": "",
+	"props": [
+        {
+        	"label": "扩展的按钮组",
+        	"description": "",
+        	"key": "buttons",
+        	"type": "Array",
+            "inputType": "array",
+            "inputProps": {
+                "itemInputType": "text",
+                "itemDefault": ""
+            },
+        	"default": []
+        },
+		{
+			"label": "提示文字",
+			"description": "",
+			"key": "text",
+			"type": "String",
+			"default": "长按提示"
+		},
+		{
+			"label": "点击复制按钮时复制的文本",
+			"description": "为空则使用text值",
+			"key": "copyText",
+			"type": "String",
+			"default": ""
+		},
+		{
+			"label": "弹出提示的方向",
+			"description": "",
+			"key": "direction",
+			"type": "String",
+			"default": "top",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "顶部", "value": "top"},
+                    { "label": "底部", "value": "bottom"}
+                ]
+            }
+		},
+		{
+			"label": "弹出提示的层级",
+			"description": "",
+			"key": "zIndex",
+			"type": "Number",
+			"default": 10071
+		},
+		{
+			"label": "文本大小",
+			"description": "",
+			"key": "size",
+			"type": "String",
+			"default": "14px",
+			"inputType": "size",
+            "sectionMode": "fontSize"
+		},
+		{
+			"label": "字体颜色",
+			"description": "",
+			"key": "color",
+			"type": "String",
+			"default": "#606266",
+			"inputType": "color"
+		},
+		{
+			"label": "弹出提示框时文本的背景色",
+			"description": "",
+			"key": "bgColor",
+			"type": "String",
+			"default": "transparent",
+			"inputType": "color"
+		},
+		{
+			"label": "显示复制按钮",
+			"description": "",
+			"key": "showCopy",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "显示透明遮罩以防止触摸穿透",
+			"description": "",
+			"key": "overlay",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "显示复制成功或者失败的提示",
+			"description": "",
+			"key": "showToast",
+			"type": "Boolean",
+			"default": true
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "",
+			"params": []
+		}
+	]
+}

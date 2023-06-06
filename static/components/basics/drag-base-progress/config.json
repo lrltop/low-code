@@ -1,0 +1,104 @@
+{
+	"componentName": "drag-base-progress",
+	"name": "进度条",
+	"description": "进度条",
+    "disabled": true,
+	"props": [
+		{
+			"label": "进度",
+			"description": "进度百分比",
+			"key": "percent",
+			"type": "Number",
+			"default": 50,
+            "inputProps": {
+                "suffixText": "%"
+            }
+		},
+		{
+			"label": "显示百分比",
+			"description": "在进度条右侧显示百分比",
+			"key": "showInfo",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "圆角大小",
+			"description": "圆角大小，app-nvue、微信基础库2.3.1+、QQ小程序、快手小程序、京东小程序",
+			"key": "borderRadius",
+			"type": "String",
+			"default": "0"
+		},
+		{
+			"label": "百分比字体大小",
+			"description": "右侧百分比字体大小，app-nvue、微信基础库2.3.1+、QQ小程序、京东小程序",
+			"key": "fontSize",
+			"type": "String",
+			"default": "16",
+            "must": {
+                "key": "showInfo",
+                "value": [true]
+            }
+		},
+		{
+			"label": "已选择颜色",
+			"description": "已选择的进度条的颜色",
+			"key": "activeColor",
+			"type": "String",
+			"default": "#09BB07",
+            "inputType": "color"
+		},
+		{
+			"label": "未选择颜色",
+			"description": "未选择的进度条的颜色",
+			"key": "backgroundColor",
+			"type": "String",
+			"default": "#EBEBEB",
+            "inputType": "color"
+		},
+		{
+			"label": "进度条动画",
+			"description": "进度条从左往右的动画",
+			"key": "active",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "动画类型",
+			"description": "动画类型，仅支持App、H5、微信小程序、QQ小程序、快手小程序、京东小程序",
+			"key": "activeMode",
+			"type": "String",
+			"default": "backwards",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "动画从头播", "value": "backwards"},
+                    { "label": "动画从上次结束点接着播", "value": "forwards"}
+                ]
+            }
+		},
+		{
+			"label": "进度增加1%所需毫秒数",
+			"description": "进度增加1%所需毫秒数，仅支持App-nvue2.6.1+、微信基础库2.8.2+、H5 3.1.11+、App-Vue 3.1.11+、快手小程序、京东小程序",
+			"key": "duration",
+			"type": "Number",
+			"default": 30,
+            "inputProps": {
+                "suffixText": "ms"
+            }
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "点击事件",
+			"params": []
+		},
+        {
+        	"label": "动画完成事件",
+        	"key": "activeend",
+        	"description": "动画完成时触发，仅支持微信小程序、京东小程序",
+        	"params": []
+        }
+	]
+}

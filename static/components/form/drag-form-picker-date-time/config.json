@@ -1,0 +1,41 @@
+{
+    "componentName": "drag-form-picker-date-time",
+    "name": "日期时间选择",
+    "description": "",
+    "order": "6",
+    "disabled": true,
+    "props": [{
+            "label": "双向绑定",
+            "description": "",
+            "key": "v-model",
+            "type": "String",
+            "default": ""
+        },
+        {
+           	"label": "标题",
+            "description": "",
+            "key": "labelText",
+            "type": "String",
+            "default": "日期"
+        },
+        {
+            "label": "选择器的粒度",
+            "description": "",
+            "key": "mode",
+            "type": "String",
+            "default": "datetime",
+            "section": [
+                { "label": "日期时间", "value": "datetime" },
+                { "label": "年月", "value": "year-month" },
+                { "label": "日期", "value": "date" },
+                { "label": "时间", "value": "time" }
+            ]
+        }
+    ],
+    "events": [{
+        "label": "点击事件",
+        "key": "click",
+        "description": "点击事件",
+        "params": []
+    }]
+}

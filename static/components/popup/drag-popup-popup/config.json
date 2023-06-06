@@ -1,0 +1,188 @@
+{
+	"componentName": "drag-popup-popup",
+	"name": "全屏抽屉",
+	"description": "",
+    "order": "1",
+    "customHandleStyle": true,
+	"props": [
+        {
+        	"label": "是否显示",
+        	"description": "",
+        	"key": "show",
+        	"type": "Boolean",
+            "inputType": "boolean",
+        	"default": true
+        },
+        {
+        	"label": "遮罩",
+        	"description": "",
+        	"key": "overlay",
+        	"type": "Boolean",
+            "inputType": "boolean",
+        	"default": true
+        },
+        {
+        	"label": "关闭图标",
+        	"description": "关闭图标点击不会关闭弹窗，会触发close事件，需要自行在close事件控制(是否显示字段)show",
+        	"key": "closeable",
+        	"type": "Boolean",
+            "inputType": "boolean",
+        	"default": true
+        },
+        {
+        	"label": "点击遮罩关闭弹窗",
+        	"description": "不会关闭弹窗，需要自行在close事件处理控制关闭",
+        	"key": "closeOnClickOverlay",
+        	"type": "Boolean",
+            "inputType": "boolean",
+        	"default": true
+        },
+        {
+        	"label": "留出底部安全距离",
+        	"description": "主要是针对IPhone X等一些底部带指示条的机型，指示条的操作区域与页面底部存在重合，容易导致用户误操作，因此我们需要针对这些机型进行底部安全区适配",
+        	"key": "safeAreaInsetBottom",
+        	"type": "Boolean",
+        	"inputType": "boolean",
+        	"default": true
+        },
+        {
+        	"label": "留出顶部手机状态栏安全距离",
+        	"description": "手机状态栏高度",
+        	"key": "safeAreaInsetTop",
+        	"type": "Boolean",
+        	"inputType": "boolean",
+        	"default": false
+        },
+        {
+        	"label": "关闭图标位置",
+        	"description": "",
+        	"key": "closeIconPos",
+        	"type": "String",
+        	"default": "top-right",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "右上角", "value": "top-right"},
+                    { "label": "左上角", "value": "top-left"},
+                    { "label": "左下角", "value": "bottom-left"},
+                    { "label": "右下角", "value": "bottom-right"}
+                ]
+            },
+            "must": {
+                "key": "closeable",
+                "value": true
+            }
+        },
+        {
+        	"label": "弹窗内容背景色",
+            "classify": "样式",
+        	"description": "",
+        	"key": "bgColor",
+        	"type": "String",
+        	"default": "white",
+        	"inputType": "color"
+        },
+        {
+        	"label": "弹窗宽度",
+            "classify": "样式",
+        	"description": "",
+        	"key": "width",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "750rpx"
+        },
+        {
+        	"label": "弹窗高度",
+            "classify": "样式",
+        	"description": "仅对顶部、底部、中间弹出有效",
+        	"key": "height",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "800rpx",
+            "must": {
+                "key": "mode",
+                "value": ["top", "bottom", "center"]
+            }
+        },
+        {
+        	"label": "弹窗圆角",
+            "classify": "样式",
+        	"description": "仅对顶部、底部、中间弹出有效",
+        	"key": "round",
+        	"type": "String",
+            "inputType": "size",
+            "must": {
+                "key": "mode",
+                "value": ["top", "bottom", "center"]
+            },
+        	"default": "0"
+        },
+        {
+        	"label": "弹出方向",
+        	"description": "",
+        	"key": "mode",
+        	"type": "String",
+        	"default": "bottom",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "底部", "value": "bottom", "description": "需设置高度"},
+                    { "label": "顶部", "value": "top", "description": "需设置高度"},
+                    { "label": "右边全屏", "value": "right", "description": "弹框高度全屏"},
+                    { "label": "左边全屏", "value": "left", "description": "弹框高度全屏"},
+                    { "label": "中间", "value": "center", "description": "需设置高度"}
+                ]
+            } 
+        },
+        {
+        	"label": "动画过渡时间",
+        	"description": "",
+        	"key": "duration",
+        	"type": "Number",
+        	"inputType": "number",
+        	"default": 300,
+            "inputProps": {
+                "suffixText": "ms"
+            }
+        },
+        {
+        	"label": "遮罩透明度",
+        	"description": "0-1之间",
+            "classify": "样式",
+        	"key": "overlayOpacity",
+        	"type": "Number",
+        	"inputType": "number",
+        	"default": 0.5,
+            "inputProps": {
+                "step": 0.01,
+                "max": 1,
+                "min": 0
+            }
+        },
+        {
+        	"label": "弹窗框层级",
+        	"description": "",
+        	"key": "zIndex",
+        	"type": "Number",
+        	"inputType": "number",
+        	"default": 10075
+        }
+	],
+	"events": [
+		{
+		    "label": "弹窗打开",
+		    "key": "open",
+		    "description": "弹窗打开时触发",
+		    "params": []
+		},
+        {
+            "label": "点击关闭事件",
+            "key": "close",
+            "description": "点击关闭事件，只做通知关闭，需要自行设置显示(show)属性实现关闭",
+            "params": []
+        }
+	],
+    "slot": {
+        "default": "弹出内容"
+    } 
+}

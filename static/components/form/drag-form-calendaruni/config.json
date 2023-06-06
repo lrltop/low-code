@@ -1,0 +1,43 @@
+{
+    "componentName": "drag-form-calendaruni",
+    "name": "日历展示",
+    "description": "",
+    "order": "6",
+    "props": [
+        {
+            "label": "日历标记",
+            "description": "日历标记",
+            "key": "selected",
+            "type": "Array",
+            "default": [{
+                "date": "2022-12-27",
+                "info": "签到",
+                "data": { "custom": "自定义信息", "name": "自定义消息头" }
+            }]
+        },{
+            "label": "农历",
+            "description": "是否显示农历",
+            "key": "lunar",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "展示当前日期信息",
+            "description": "是否在日历下方展示当前日期信息，在信息过长时显示",
+            "key": "showSelectedData",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+        "label": "日期选择改变",
+        "key": "change",
+        "description": "点击某个日期时触发，返回当前日期相关数据",
+        "params": []
+    }, {
+        "label": "切换月份",
+        "key": "monthSwitch",
+        "description": "切换月份时触发",
+        "params": []
+    }]
+}

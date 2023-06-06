@@ -1,0 +1,113 @@
+{
+    "componentName": "drag-data-card",
+    "name": "卡片",
+    "description": "",
+    "props": [{
+            "label": "标题文字",
+            "description": "",
+            "key": "title",
+            "type": "String",
+            "default": "标题" 
+        },
+        {
+            "label": "副标题文字",
+            "description": "",
+            "key": "subTitle",
+            "type": "String",
+            "default": "副标题"
+        },
+        {
+            "label": "内容",
+            "description": "",
+            "key": "content",
+            "type": "String",
+            "default": "这是一段文字内容，这是一段文字内容，这是一段文字内容，这是一段文字内容。"
+        },
+        {
+            "label": "标题额外信息",
+            "description": "",
+            "key": "extra",
+            "type": "String",
+            "default": "额外信息"
+        },
+        {
+            "label": "标题左侧缩略图",
+            "description": "",
+            "key": "thumbnail",
+            "type": "String",
+            "inputType": "image",
+            "default": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+        },
+        {
+            "label": "封面图",
+            "description": "",
+            "key": "cover",
+            "type": "String",
+            "inputType": "image",
+            "default": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg"
+        },
+        {
+            "label": "是否通栏",
+            "description": "卡片内容是否通栏，为true时将去除padding值",
+            "key": "isFull",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "开启阴影",
+            "description": "卡片内容是否开启阴影",
+            "key": "isShadow",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "阴影",
+            "description": "卡片阴影,需符合 css 值",
+            "key": "shadow",
+            "type": "String",
+            "default": "0px 0px 3px 1px rgba(0, 0, 0, 0.08)",
+            "sectionMode": "shadow",
+            "must": {
+                "key": "isShadow",
+                "value": [true]
+            }
+        },
+        {
+            "label": "卡片边框",
+            "description": "卡片边框",
+            "key": "border",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "卡片外边距",
+            "description": "卡片外边距",
+            "key": "margin",
+            "type": "Number",
+            "default": 20
+        },
+        {
+            "label": "卡片内边距",
+            "description": "卡片内边距",
+            "key": "spacing",
+            "type": "Number",
+            "default": 20
+        },
+        {
+            "label": "卡片内容内边距",
+            "description": "卡片内容内边距",
+            "key": "padding",
+            "type": "Number",
+            "default": 20
+        }
+    ],
+    "slot": {
+        "actions": "组件底部"
+    },
+    "events": [{
+        "label": "点击事件",
+        "key": "click",
+        "description": "",
+        "params": []
+    }]
+}

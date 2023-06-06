@@ -1,0 +1,273 @@
+{
+	"componentName": "drag-base-cell",
+	"name": "单元格",
+	"description": "单元格",
+    "order": "2",
+    "customHandleStyle":true,
+	"props": [
+		{
+			"label": "左侧标题",
+            "classify": "文字",
+			"description": "",
+			"key": "title",
+			"type": "String",
+			"default": "青春是生命之河中最璀璨的一颗明珠"
+		},
+        {
+        	"label": "标题超出省略",
+            "classify": "省略",
+        	"description": "",
+        	"key": "titleEllipsis",
+        	"type": "String",
+        	"default": "none",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "不省略", "value": "none"},
+                    { "label": "1行", "value": "1"},
+                    { "label": "2行", "value": "2"},
+                    { "label": "3行", "value": "3"}
+                ]
+            }
+        },
+		{
+			"label": "描述信息",
+			"description": "标题下方的描述信息",
+            "classify": "文字",
+			"key": "label",
+			"type": "String",
+			"default": "时间带不走年轮，流年带不走青春，青春属于有梦想有追求的人，只要保持一颗积极向上的心，青春就属于你。"
+		},
+        {
+        	"label": "描述信息超出省略",
+        	"description": "",
+        	"key": "labelEllipsis",
+            "classify": "省略",
+        	"type": "String",
+        	"default": "none",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "不省略", "value": "none"},
+                    { "label": "1行", "value": "1"},
+                    { "label": "2行", "value": "2"},
+                    { "label": "3行", "value": "3"}
+                ]
+            }
+        },
+		{
+			"label": "右侧的内容",
+            "classify": "文字",
+			"description": "",
+			"key": "value",
+			"type": "String",
+			"default": ""
+		},
+		{
+			"label": "左侧图标",
+            "classify": "图标",
+			"description": "",
+			"key": "leftIcon",
+			"type": "String",
+            "inputType": "icon",
+			"default": "hx-icon:hx-icon-gonggao"
+		},
+        {
+			"label": "标识符",
+            "classify": "功能",
+			"description": "cell被点击时click事件返回",
+			"key": "name",
+			"type": "String",
+			"default": ""
+		},
+		{
+			"label": "禁用",
+			"description": "",
+            "classify": "功能",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "下边框",
+			"description": "",
+            "classify": "功能",
+			"key": "border",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "内容垂直居中",
+            "classify": "样式",
+			"description": "主要是针对右侧的value部分",
+			"key": "center",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "点击反馈",
+            "classify": "功能",
+			"description": "表现为点击时加上灰色背景",
+			"key": "clickable",
+			"type": "Boolean",
+			"default": false
+		},
+		
+		{
+			"label": "必填星号",
+            "classify": "功能",
+			"description": "显示表单状态下的必填星号",
+			"key": "required",
+			"type": "Boolean",
+			"default": false
+		},
+        {
+			"label": "阻止点击事件传播",
+            "classify": "功能",
+			"description": "",
+			"key": "stop",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "右侧图标（需关闭右侧箭头）",
+			"description": "",
+            "classify": "图标",
+			"key": "rightIcon",
+			"type": "String",
+            "inputType": "icon",
+			"default": "uview:heart-fill",
+            "must": {
+                "key": "isLink",
+                "value": [false]
+            }
+		},
+		{
+			"label": "右侧图标方向",
+			"description": "",
+            "classify": "图标",
+			"key": "arrowDirection",
+			"type": "String",
+			"default": "right",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "向左", "value": "left"},
+                    { "label": "向右", "value": "right"},
+                    { "label": "向上", "value": "up"},
+                    { "label": "向下", "value": "down"}
+                ]
+            }
+		},
+        {
+        	"label": "展示右侧箭头并开启点击反馈",
+        	"description": "",
+            "classify": "图标",
+        	"key": "isLink",
+        	"type": "Boolean",
+        	"default": true,
+            "inputType": "boolean"
+        },
+		{
+			"label": "单位元大小",
+			"description": "",
+			"key": "size",
+            "classify": "样式",
+			"type": "String",
+			"default": "medium",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "大", "value": "large"},
+                    { "label": "中", "value": "medium"}
+                ]
+            }
+		},
+		{
+			"label": "标题文字大小",
+			"description": "",
+			"key": "titleSize",
+            "classify": "样式",
+			"type": "String",
+			"default": "15px",
+			"inputType": "size",
+            "sectionMode": "fontSize"
+		},
+		{
+			"label": "左侧图标大小",
+			"description": "",
+            "classify": "样式",
+			"key": "leftIconSize",
+			"type": "String",
+			"default": "40rpx",
+			"inputType": "size",
+            "sectionMode": "fontSize"
+		},
+		{
+			"label": "右侧图标大小",
+			"description": "",
+            "classify": "样式",
+			"key": "rightIconSize",
+			"type": "String",
+			"default": "40rpx",
+			"inputType": "size",
+            "sectionMode": "fontSize"
+		},
+        {
+        	"label": "标题颜色",
+        	"description": "",
+        	"key": "titleColor",
+            "classify": "样式",
+        	"type": "String",
+        	"default": "#303133",
+        	"inputType": "color"
+        },
+        {
+        	"label": "描述文字颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelColor",
+        	"type": "String",
+        	"default": "#909193",
+        	"inputType": "color"
+        },
+        {
+        	"label": "右侧内容颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "valueColor",
+        	"type": "String",
+        	"default": "#606266",
+        	"inputType": "color"
+        },
+        {
+        	"label": "左侧图标颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "leftIconColor",
+        	"type": "String",
+        	"default": "rgb(96, 98, 102)",
+        	"inputType": "color"
+        },
+        {
+        	"label": "右侧图标颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "rightIconColor",
+        	"type": "String",
+        	"default": "rgb(96, 98, 102)",
+        	"inputType": "color"
+        }
+	],
+	"events": [
+		{
+			"label": "点击cell列表时触发",
+			"key": "click",
+			"description": "",
+			"params": []
+		}
+	],
+	"slot": {
+	    
+	}
+}

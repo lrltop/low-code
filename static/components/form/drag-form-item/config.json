@@ -1,0 +1,80 @@
+{
+	"componentName": "drag-form-item",
+	"name": "表单项",
+	"description": "",
+    "order": 1,
+    "canvasSelectedMode": "plain",
+	"props": [
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "label",
+        	"type": "String",
+        	"default": "标题"
+        },
+		{
+			"label": "标题宽度",
+			"description": "",
+			"key": "labelWidth",
+			"type": "String",
+            "inputType": "size",
+			"default": "200rpx"
+		},
+        {
+        	"label": "标题位置",
+        	"description": "",
+        	"key": "labelPosition",
+        	"type": "String",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左侧", "value": "left"},
+                    { "label": "顶部", "value": "top"}
+                ]
+            },
+        	"default": "left"
+        },
+        {
+        	"label": "左侧图标或图片地址",
+        	"description": "",
+        	"key": "leftIcon",
+        	"type": "String",
+            "inputType": "UviewIcon",
+        	"default": ""
+        },
+        {
+        	"label": "右侧图标或图片地址",
+        	"description": "",
+        	"key": "rightIcon",
+        	"type": "String",
+            "inputType": "UviewIcon",
+        	"default": ""
+        },
+		{
+			"label": "显示下边框",
+			"description": "",
+			"key": "borderBottom",
+			"type": "Boolean",
+			"inputType": "boolean",
+			"default": false
+		},
+        {
+        	"label": "必填*号",
+        	"description": "需要设置内边距才能显示",
+        	"key": "required",
+        	"type": "Boolean",
+        	"default": false
+        }
+	],
+	"events": [
+        {
+        	"label": "点击事件",
+        	"key": "click",
+        	"description": "",
+        	"params": []
+        }
+	],
+    "slot": {
+        "default": "内容"
+    }
+}

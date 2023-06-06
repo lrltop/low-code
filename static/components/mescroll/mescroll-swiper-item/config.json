@@ -1,0 +1,35 @@
+{
+    "componentName": "mescroll-swiper-item",
+    "name": "上下拉组件",
+    "description": "上下拉组件（可配合多列表容器使用，添加到多列表容器的slot中）",
+    "order": 3,
+    "props": [{
+        "label": "节点引用",
+        "description": "mescroll使用，不可修改",
+        "key": "ref",
+        "type": "String",
+        "inputType": "text",
+        "inputProps": {
+            "disabled": true
+        },
+        "default": "mescrollItem"
+    }],
+    "events": [{
+        "label": "加载数据",
+        "key": "upCallback",
+        "description": "将返回{mescroll，page}两个对象",
+        "params": [{
+            "mescroll": "上下拉刷新实例，可以结束上拉监听事件mescroll.endSuccess(list.length)，加载失败提示this.mescroll.endErr()等",
+            "page": "page.num:当前页 从1开始, page.size:每页数据条数,默认10"
+        }]
+    }],
+    "slot": {
+        "default": "默认内容"
+    }
+    // "extraJs": {
+    //     "mixins": {
+    //         "sourceValue": "@/components/mescroll/mescroll-mixins.js",
+    //         "specifier": "MescrollMixin"
+    //     }
+    // }
+}

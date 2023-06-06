@@ -1,0 +1,45 @@
+{
+    "componentName": "mescroll-swiper-con",
+    "name": "多列表容器",
+    "description": "多列表上下拉组件容器",
+    "order": 2,
+    "props": [{
+            "label": "菜单列表",
+            "description": "",
+            "key": "tabs",
+            "type": "Array",
+            "inputType": "array",
+            "inputProps": {
+                "minlength": 2,
+                "itemInputType": "object",
+                "itemInputDefault": {},
+                "itemInputProps": {
+                    "props": {
+                        "name": {
+                            "label": "菜单标题",
+                            "inputType": "text",
+                            "default": "分类"
+                        }
+                    }
+                }
+            },
+            "default": [
+                { "name": "全部" },
+                { "name": "分类一" },
+                { "name": "分类二" }
+            ]
+        },
+        {
+            "label": "菜单宽度",
+            "description": "每个菜单的宽度，当不设置宽度时，平均分配宽度，设置宽度后改为水平滑动",
+            "key": "tabWidth",
+            "type": "Number",
+            "default": 0
+        }
+    ],
+    "events": [],
+    "slot": {
+        "vForPrefix": "slot-",
+        "vForProps": "tabs"
+    }
+}

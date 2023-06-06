@@ -1,0 +1,109 @@
+{
+	"componentName": "drag-data-album",
+	"name": "九宫格相册",
+	"description": "",
+	"props": [
+		{
+			"label": "图片链接",
+			"description": "",
+			"key": "urls",
+			"type": "Array",
+			"inputType": "array",
+            "inputProps": {
+                "itemInputType": "image",
+                "itemInputProps": {},
+                "itemDefault": ""
+            },
+			"default": [
+                "http://img.lemeitu.com/m00/a0/5c/ffc3c39d289296db3b97effa924d4bb6__w.jpg",
+                "http://img.lemeitu.com/m00/a0/5c/ffc3c39d289296db3b97effa924d4bb6__w.jpg",
+                "http://img.lemeitu.com/m00/2d/34/ef812ef475af89c643b0111e66d8ff00__w.jpg",
+                "http://img.lemeitu.com/m00/2f/50/840c937f211bd6b195d919b267263f59__w.jpg",
+                "http://img.lemeitu.com/m00/06/5e/43a7cdfc525476cb15c099900c256832__w.jpg",
+                "http://img.lemeitu.com/m00/34/59/09e16260c1f600683269018c43ab0ea5__w.jpg",
+                "http://img.lemeitu.com/m00/a3/8f/580d3094ae6eea64c915c309b9f1ebce__w.jpg",
+                "http://img.lemeitu.com/m00/06/4a/6a5a7b23518b822b15dbab9e4c9e75f6__w.jpg",
+                "http://img.lemeitu.com/m00/24/3c/b43c0ca796899f5e54365a90dd5d1366__w.jpg"
+            ]
+		},
+        {
+        	"label": "单图时，图片长边的长度",
+        	"description": "",
+        	"key": "singleSize",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "180rpx"
+        },
+        {
+        	"label": "多图时，图片边长",
+        	"description": "",
+        	"key": "multipleSize",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "80rpx"
+        },
+        {
+        	"label": "多图时，图片水平和垂直之间的间隔",
+        	"description": "",
+        	"key": "space",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "6rpx"
+        },
+        {
+        	"label": "单图时，图片缩放裁剪的模式",
+        	"description": "",
+        	"key": "singleMode",
+        	"type": "String",
+        	"default": "scaleToFill",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "imageMode"
+            }
+            
+        },
+        {
+        	"label": "多图时，图片缩放裁剪的模式",
+        	"description": "",
+        	"key": "multipleMode",
+        	"type": "String",
+        	"default": "scaleToFill",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "imageMode"
+            }
+        },
+        {
+        	"label": "最多展示的图片数量",
+        	"description": "超出时最后一个位置将会显示剩余图片数量",
+        	"key": "maxCount",
+        	"type": "Number",
+        	"default": 9
+        },
+        {
+        	"label": "每行展示图片数量",
+        	"description": "如设置，singleSize和multipleSize将会无效",
+        	"key": "rowCount",
+        	"type": "Number",
+        	"default": 3
+        },
+        {
+        	"label": "是否可以预览图片",
+        	"description": "",
+        	"key": "previewFullImage",
+        	"type": "Boolean",
+        	"default": false
+        },
+        {
+        	"label": "超出maxCount时是否显示查看更多的提示",
+        	"description": "",
+        	"key": "showMore",
+        	"type": "Boolean",
+        	"default": true
+        }
+        
+	],
+	"events": [
+		
+	]
+}

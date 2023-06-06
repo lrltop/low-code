@@ -1,0 +1,19 @@
+{
+    "name": "空白模板",
+    "order":1,
+    "data": {
+        "config": {
+            "fileStyleAndClass": {
+                "iStyle": {
+            		"backgroundColor": "#FFFFFF"
+            	},
+                "iClass": []
+            },
+            "dragList": []
+        },
+        "pagesStyle": {
+        	
+        }
+    }
+    
+}

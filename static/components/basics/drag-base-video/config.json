@@ -1,0 +1,107 @@
+{
+    "componentName": "drag-base-video",
+    "name": "视频",
+    "description": "视频",
+    "order": "3",
+    "props": [{
+            "label": "视频链接",
+            "description": "视频链接",
+            "key": "src",
+            "type": "String",
+            "default": "https://www.xyzlink.cn/shiyi/file/static/video_list/video_list/1.mp4"
+        },
+        {
+            "label": "视频方向（网页不支持）",
+            "description": "设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）；H5、字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持",
+            "key": "direction",
+            "type": "Number",
+            "default": 90,
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "正常竖向", "value": 0 },
+                    { "label": "屏幕逆时针90度", "value": 90},
+                    { "label": "屏幕顺时针90度", "value": -90}
+                ]
+            }
+        },
+        {
+            "label": "视频封面",
+            "description": "视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效",
+            "key": "poster",
+            "type": "String",
+            "inputType": "image",
+            "default": "",
+            "must": {
+                "key": "controls",
+                "value": true
+            }
+        },
+        {
+            "label": "视频标题",
+            "description": "视频的标题，全屏时在顶部展示",
+            "key": "title",
+            "type": "String",
+            "default": ""
+        },
+        {
+            "label": "播放控件",
+            "description": "是否显示默认播放控件",
+            "key": "controls",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "自动播放",
+            "description": "是否自动播放",
+            "key": "autoplay",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "循环播放",
+            "description": "是否循环播放",
+            "key": "loop",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "静音播放",
+            "description": "是否静音播放",
+            "key": "muted",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+            "label": "播放事件",
+            "key": "onVideoPlay",
+            "description": "当开始/继续播放时触发",
+            "params": []
+        },
+        {
+            "label": "暂停事件",
+            "key": "onVideoPause",
+            "description": "当暂停播放时触发",
+            "params": []
+        },
+        {
+            "label": "播放结束事件",
+            "key": "onVideoEnded",
+            "description": "当播放到末尾时触发",
+            "params": []
+        },
+        {
+            "label": "全屏事件",
+            "key": "onVideoFullscreenchange",
+            "description": "当视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal",
+            "params": []
+        },
+        {
+            "label": "播放出错事件",
+            "key": "onVideoError",
+            "description": "视频播放出错时触发",
+            "params": []
+        }
+    ]
+}

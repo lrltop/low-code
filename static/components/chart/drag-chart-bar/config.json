@@ -1,0 +1,100 @@
+{
+    "componentName": "drag-chart-bar",
+    "name": "条状图",
+    "description": "",
+    "customHandleStyle": true,
+    "order": 2,
+    "props": [{
+            "label": "图表数据",
+            "description": "",
+            "key": "chartData",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "categories": ["2016", "2017", "2018", "2019"],
+                "series": [{
+                        "name": "目标值",
+                        "data": [35, 36, 31, 33]
+                    },
+                    {
+                        "name": "完成量",
+                        "data": [18, 27, 21, 24]
+                    }
+                ]
+            }
+        },
+        {
+            "label": "图表配置",
+            "description": "",
+            "key": "bar",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "type": "group",
+                "width": 30,
+                "meterBorde": 1,
+                "meterFillColor": "#FFFFFF",
+                "activeBgColor": "#000000",
+                "activeBgOpacity": 0.08,
+                "barBorderCircle": true,
+                "seriesGap": 2,
+                "categoryGap": 2
+            }
+        },
+        {
+            "label": "图表颜色组",
+            "description": "",
+            "key": "optsColor",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": ["#1890FF", "#91CB74", "#FAC858", "#EE6666", "#73C0DE", "#3CA272", "#FC8452", "#9A60B4", "#ea7ccc"]
+        },
+        {
+            "label": "图表距离",
+            "description": "图表距离四周的间隔",
+            "key": "optsPadding",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": [15, 30, 0, 15]
+        },
+        {
+            "label": "图例配置",
+            "description": "",
+            "key": "optsLegend",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "show": true,
+                "position": "bottom",
+                "float": "bottom",
+                "padding": "5",
+                "margin": "5",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#ffffff",
+                "borderWidth": 0,
+                "fontSize": 13,
+                "fontColor": "#666666",
+                "lineHeight": 11,
+                "hiddenColor": "#CECECE",
+                "itemGap": 10
+            }
+        },
+        {
+            "label": "X轴配置",
+            "description": "",
+            "key": "optsXAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        },
+        {
+            "label": "Y轴配置",
+            "description": "",
+            "key": "optsYAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        }
+    ],
+    "events": []
+}

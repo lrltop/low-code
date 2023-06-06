@@ -1,0 +1,179 @@
+{
+    "componentName": "drag-form-search",
+    "name": "搜索框",
+    "description": "",
+    "props": [{
+            "label": "双向绑定",
+            "description": "",
+            "key": "v-model",
+            "type": "String",
+            "default": ""
+        },
+        {
+            "label": "搜索关键字",
+            "description": "搜索关键字",
+            "key": "placeholder",
+            "type": "String",
+            "default": "请输入搜索关键字"
+        },
+        {
+            "label": "输入框对齐方式",
+            "description": "输入框内容水平对齐方式",
+            "key": "inputAlign",
+            "type": "String",
+            "default": "left",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左对齐", "value": "left" },
+                    { "label": "居中对齐", "value": "center" }
+                ]
+            }
+        },
+        {
+            "label": "输入框最大能输入的长度",
+            "description": "输入框最大能输入的长度，-1为不限制长度",
+            "key": "maxlength",
+            "type": "Number",
+            "default": -1
+        },
+        {
+            "label": "搜索左侧文本信息",
+            "description": "搜索左侧文本信息",
+            "key": "label",
+            "type": "String",
+            "default": ""
+        },
+        {
+            "label": "右侧控件",
+            "description": "是否显示右侧控件(右侧的'搜索'按钮)",
+            "key": "showAction",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "关键字颜色",
+            "description": "搜索关键字颜色",
+            "classify": "样式",
+            "key": "placeholderColor",
+            "type": "String",
+            "inputType": "color",
+            "default": "#909399"
+        },
+        {
+            "label": "禁用输入框",
+            "description": "是否禁用输入框",
+            "key": "disabled",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "背景颜色",
+            "description": "搜索框背景颜色",
+            "classify": "样式",
+            "key": "bgColor",
+            "type": "String",
+            "default": "#f2f2f2",
+            "inputType": "color"
+        },
+        {
+            "label": "清除控件",
+            "description": "是否启用清除控件",
+            "key": "clearabled",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "自动获得焦点",
+            "description": "是否自动获得焦点",
+            "key": "focus",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "开启动画",
+            "description": "是否开启动画",
+            "key": "animation",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "右侧控件文字",
+            "description": "右侧控件文字",
+            "key": "actionText",
+            "type": "String",
+            "default": "搜索"
+        },
+        {
+            "label": "边框颜色",
+            "description": "边框颜色，配置了颜色，才会有边框",
+            "classify": "样式",
+            "key": "borderColor",
+            "inputType": "color",
+            "type": "String",
+            "default": "transparent"
+        },
+        {
+            "label": "输入框字体颜色",
+            "description": "输入框字体颜色",
+            "classify": "样式",
+            "key": "color",
+            "type": "String",
+            "inputType": "color",
+            "default": "#606266"
+        },
+        {
+            "label": "组件距离",
+            "description": "组件与其他上下左右元素之间的距离，带单位的字符串形式，如'30rpx'、'30rpx 20rpx'等写法",
+            "classify": "样式",
+            "key": "margin",
+            "type": "String",
+            "default": "0"
+        },
+        {
+            "label": "输入框高度",
+            "description": "输入框高度，单位rpx",
+            "classify": "样式",
+            "key": "height",
+            "type": "String",
+            "default": 45,
+            "inputType": "size"
+        }
+    ],
+    "events": [{
+            "label": "用户确定搜索时触发",
+            "key": "search",
+            "description": "用户确定搜索时触发，用户按回车键，或者手机键盘右下角的'搜索'键时触发",
+            "params": []
+        }, {
+            "label": "点击事件",
+            "key": "click",
+            "description": "disabled为true时，点击输入框，发出此事件，用于跳转搜索页",
+            "params": []
+        },
+        {
+            "label": "输入时触发",
+            "key": "change",
+            "description": "输入框内容发生变化时触发",
+            "params": []
+        },
+        {
+            "label": "输入框聚焦时触发",
+            "key": "focus",
+            "description": "",
+            "params": []
+        },
+        {
+            "label": "输入框失去焦点时触发",
+            "key": "blur",
+            "description": "快手小程序不支持",
+            "params": []
+        },
+        {
+            "label": "用户点击右侧控件时触发",
+            "description": "需开启右侧控件显示",
+            "key": "custom",
+            "params": []
+        }
+    ]
+}

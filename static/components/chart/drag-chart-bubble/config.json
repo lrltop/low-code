@@ -1,0 +1,98 @@
+{
+    "componentName": "drag-chart-bubble",
+    "name": "气泡图",
+    "description": "",
+    "customHandleStyle": true,
+    "order": 6,
+    "props": [{
+            "label": "图表数据",
+            "description": "",
+            "key": "chartData",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "series": [{
+                        "name": "气泡一",
+                        "data": [
+                            [95, 95, 23, "标题1"],
+                            [30, 55, 33, "标题2"]
+                        ]
+                    },
+                    {
+                        "name": "气泡二",
+                        "data": [
+                            [130, 30, 30, "标题3"],
+                            [200, 90, 40, "标题4"]
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "label": "图表配置",
+            "description": "",
+            "key": "column",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "border": 2,
+                "opacity": 0.5
+            }
+        },
+        {
+            "label": "图表颜色组",
+            "description": "",
+            "key": "optsColor",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": ["#1890FF", "#91CB74", "#FAC858", "#EE6666", "#73C0DE", "#3CA272", "#FC8452", "#9A60B4", "#ea7ccc"]
+        },
+        {
+            "label": "图表距离",
+            "description": "图表距离四周的间隔",
+            "key": "optsPadding",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": [15, 15, 0, 15]
+        },
+        {
+            "label": "图例配置",
+            "description": "",
+            "key": "optsLegend",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "show": true,
+                "position": "bottom",
+                "float": "bottom",
+                "padding": "5",
+                "margin": "5",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#ffffff",
+                "borderWidth": 0,
+                "fontSize": 13,
+                "fontColor": "#666666",
+                "lineHeight": 11,
+                "hiddenColor": "#CECECE",
+                "itemGap": 10
+            }
+        },
+        {
+            "label": "X轴配置",
+            "description": "",
+            "key": "optsXAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        },
+        {
+            "label": "Y轴配置",
+            "description": "",
+            "key": "optsYAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        }
+    ],
+    "events": []
+}

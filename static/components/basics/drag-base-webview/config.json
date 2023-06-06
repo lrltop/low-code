@@ -1,0 +1,20 @@
+{
+    "componentName": "drag-base-webview",
+    "name": "webview",
+    "description": "webview",
+    "order": "1000",
+    "disabled": true,
+    "props": [{
+        "label": "网页链接",
+        "description": "webview 指向网页的链接",
+        "key": "src",
+        "type": "String",
+        "default": "https://uniapp.dcloud.io/static/web-view.html"
+    }],
+    "events": [{
+        "label": "消息事件",
+        "key": "onWebViewMessage",
+        "description": "网页向应用 postMessage 时，会在特定时机（后退、组件销毁、分享）触发并收到消息。",
+        "params": []
+    }]
+}

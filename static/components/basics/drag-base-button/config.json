@@ -1,0 +1,512 @@
+{
+	"componentName": "drag-base-button",
+	"name": "按钮",
+	"description": "按钮",
+    "order": "2",
+	"props": [
+		{
+			"label": "按钮文字",
+			"description": "按钮文字",
+            "classify": "样式文字",
+			"key": "text",
+			"type": "String",
+			"default": "按钮"
+		},
+        {
+        	"label": "按钮大小",
+        	"description": "",
+            "classify": "样式文字",
+        	"key": "size",
+        	"type": "String",
+        	"default": "default",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "默认", "value": "default"},
+                    { "label": "小尺寸", "value": "mini"}
+                ]
+            }
+        },
+        {
+        	"label": "风格类型",
+            "classify": "样式文字",
+        	"description": "选择为主要(primary)时，微信小程序、360小程序为绿色，App、H5、百度小程序、支付宝小程序、飞书小程序、快应用为蓝色，字节跳动小程序为红色，QQ小程序为浅蓝色。如想在多端统一颜色，请改用default，然后自行写样式",
+        	"key": "type",
+        	"type": "String",
+        	"default": "primary",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "白色", "value": "default"},
+                    { "label": "主要", "value": "primary", "description": "微信小程序、360小程序为绿色，App、H5、百度小程序、支付宝小程序、飞书小程序、快应用为蓝色，字节跳动小程序为红色，QQ小程序为浅蓝色。如想在多端统一颜色，请改用default，然后自行写样式"},
+                    { "label": "红色", "value": "warn"}
+                ]
+            }
+        },
+        {
+        	"label": "文字颜色",
+        	"description": "会覆盖风格",
+            "classify": "样式文字",
+        	"key": "color",
+        	"type": "String",
+            "inputType": "color",
+        	"default": ""
+        },
+        {
+        	"label": "背景颜色",
+        	"description": "会覆盖风格",
+            "classify": "样式文字",
+        	"key": "bgColor",
+        	"type": "String",
+            "inputType": "color",
+        	"default": ""
+        },
+        {
+        	"label": "文字大小",
+        	"description": "会覆盖风格",
+            "classify": "样式文字",
+        	"key": "fontSize",
+        	"type": "String",
+            "inputType": "size",
+            "sectionMode": "fontSize",
+        	"default": "36rpx"
+        },
+        {
+        	"label": "按钮镂空",
+        	"description": "",
+            "classify": "样式文字",
+        	"key": "plain",
+        	"type": "Boolean",
+        	"default": false
+        },
+        {
+        	"label": "开放能力",
+        	"description": "各平台提供的开放能力",
+            "classify": "开放能力",
+        	"key": "openType",
+        	"type": "String",
+        	"default": "",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { 
+                        "label": "打开“意见反馈”页面，用户可提交反馈内容并上传日志", 
+                        "value": "feedback", 
+                        "description": "仅支持App、微信小程序、QQ小程序，小程序中，开发者可以登录 微信小程序管理后台、QQ小程序后台后，进入菜单“客服反馈”页面获取反馈内容。在 App 中，开发者登录 DCloud开发者中心 (opens new window)后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容"
+                    },
+                    { 
+                        "label": "触发用户转发", 
+                        "value": "share", 
+                        "description": "仅支持微信小程序、百度小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序、京东小程序、360小程序"
+                    },
+                    { 
+                        "label": "获取用户信息", 
+                        "value": "getUserInfo", 
+                        "description": "仅支持微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序、360小程序，可以从@getuserinfo回调中获取到用户信息"
+                    },
+                    { 
+                        "label": "打开客服会话", 
+                        "value": "contact", 
+                        "description": "仅支持微信小程序、百度小程序、快手小程序，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息"
+                    },
+                    { 
+                        "label": "获取用户手机号", 
+                        "value": "getPhoneNumber", 
+                        "description": "仅支持微信小程序、百度小程序、字节跳动小程序、支付宝小程序、快手小程序、京东小程序，可以从@getphonenumber回调中获取到用户信息"
+                    },
+                    { 
+                        "label": "小程序中打开APP", 
+                        "value": "launchApp", 
+                        "description": "仅支持微信小程序、QQ小程序、快手小程序、京东小程序，可以通过app-parameter属性设定向APP传的参数"
+                    },
+                    { 
+                        "label": "打开授权设置页", 
+                        "value": "openSetting", 
+                        "description": "仅支持微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序"
+                    },
+                    { 
+                        "label": "获取用户头像，可以从@chooseavatar回调中获取到头像信息", 
+                        "value": "chooseAvatar", 
+                        "description": "仅支持微信小程序2.21.2版本+"
+                    },
+                    { 
+                        "label": "发布抖音视频", 
+                        "value": "uploadDouyinVideo", 
+                        "description": "仅支持字节小程序2.65.0版本+"
+                    },
+                    { 
+                        "label": "支持小程序授权", 
+                        "value": "getAuthorize", 
+                        "description": "仅支持支付宝小程序"
+                    },
+                    { 
+                        "label": "关注生活号", 
+                        "value": "lifestyle", 
+                        "description": "仅支持支付宝小程序"
+                    },
+                    { 
+                        "label": "分享到通讯录好友", 
+                        "value": "contactShare", 
+                        "description": "仅支持支付宝小程序基础库1.11.0版本+"
+                    },
+                    { 
+                        "label": "呼起QQ群资料卡页面", 
+                        "value": "openGroupProfile", 
+                        "description": "仅支持QQ小程序基础库1.4.7版本+，可以通过group-id属性设定需要打开的群资料卡的群号，同时manifest.json中必须配置groupIdList"
+                    },
+                    { 
+                        "label": "呼起频道页面", 
+                        "value": "openGuildProfile", 
+                        "description": "仅支持QQ小程序基础库1.46.8版本+，可以通过guild-id属性设定需要打开的频道ID"
+                    },
+                    { 
+                        "label": "打开公众号资料卡", 
+                        "value": "openPublicProfile", 
+                        "description": "仅支持QQ小程序基础库1.12.0版本+，可以通过public-id属性设定需要打开的公众号资料卡的号码，同时manifest.json中必须配置publicIdList"
+                    },
+                    { 
+                        "label": "在自定义开放数据域组件中,向指定好友发起分享据", 
+                        "value": "shareMessageToFriend", 
+                        "description": "仅支持QQ小程序基础库1.17.0版本+"
+                    },
+                    { 
+                        "label": "添加好友", 
+                        "value": "addFriend", 
+                        "description": "仅支持QQ小程序，对方需要通过该小程序进行授权，允许被加好友后才能调用成功用户授权"
+                    },
+                    { 
+                        "label": "添加彩签，点击后添加状态有用户提示，无回调", 
+                        "value": "addColorSign", 
+                        "description": "仅支持QQ小程序基础库1.10.0版本+"
+                    },
+                    { 
+                        "label": "添加群应用（只有管理员或群主有权操作）", 
+                        "value": "addGroupApp", 
+                        "description": "仅支持QQ小程序基础库1.16.0版本+，添加后给button绑定@addgroupapp事件接收回调数据"
+                    },
+                    { 
+                        "label": "选择用户收货地址（百度小程序）", 
+                        "value": "chooseAddress", 
+                        "description": "仅支持百度小程序3.160.3版本+，可以从@chooseaddress回调中获取到用户选择的地址信息"
+                    },
+                    { 
+                        "label": "选择用户发票抬头（百度小程序）", 
+                        "value": "chooseInvoiceTitle", 
+                        "description": "仅支持百度小程序3.160.3版本+，可以从@chooseinvoicetitle回调中获取到用户选择发票抬头信息"
+                    },
+                    { 
+                        "label": "登录（百度小程序）", 
+                        "value": "login", 
+                        "description": "仅支持百度小程序3.230.1版本+，可以从@login回调中确认是否登录成功"
+                    },
+                    { 
+                        "label": "订阅类模板消息，需要用户授权才可发送", 
+                        "value": "subscribe", 
+                        "description": "仅支持百度小程序"
+                    },
+                    { 
+                        "label": "触发用户收藏", 
+                        "value": "favorite", 
+                        "description": "仅支持快手小程序"
+                    },
+                    { 
+                        "label": "触发用户稍后再看", 
+                        "value": "watchLater", 
+                        "description": "仅支持快手小程序"
+                    },
+                    { 
+                        "label": "触发打开用户主页", 
+                        "value": "openProfile", 
+                        "description": "仅支持快手小程序"
+                    }
+                ]
+            }
+        },
+        {
+        	"label": "按住出现点击态时间",
+            "classify": "功能",
+        	"description": "单位毫秒",
+        	"key": "hoverStartTime",
+        	"type": "Number",
+            "inputProps": {
+                "suffixText": "毫秒"
+            },
+        	"default": 20
+        },
+        {
+        	"label": "松开后点击态保留时间",
+        	"description": "单位毫秒",
+            "classify": "功能",
+        	"key": "hoverStayTime",
+        	"type": "Number",
+            "inputProps": {
+                "suffixText": "毫秒"
+            },
+        	"default": 70
+        },
+        {
+        	"label": "打开APP向APP传递的参数",
+        	"description": "open-type=launchApp时有效",
+            "classify": "开放能力",
+        	"key": "appParameter",
+        	"type": "String",
+        	"default": "",
+            "must": {
+                "key": "openType",
+                "value": "launchApp"
+            }
+        },
+        {
+        	"label": "返回用户信息的语言",
+        	"description": "仅支持微信小程序",
+            "classify": "功能",
+        	"key": "lang",
+        	"type": "String",
+        	"default": "en",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "简体中文", "value": "zh_CN"},
+                    { "label": "繁体中文", "value": "zh_TW"},
+                    { "label": "英文", "value": "en"}
+                ]
+            }
+        },
+        {
+        	"label": "会话来源",
+            "classify": "开放能力",
+        	"description": "仅支持微信小程序，open-type=contact时有效",
+        	"key": "sessionFrom",
+        	"type": "String",
+        	"default": "",
+            "must": {
+                "key": "openType",
+                "value": "contact"
+            }
+        },
+        {
+        	"label": "会话内消息卡片标题",
+            "classify": "开放能力",
+        	"description": "仅支持微信小程序，open-type=contact时有效",
+        	"key": "sendMessageTitle",
+        	"type": "String",
+        	"default": "当前标题",
+            "must": {
+                "key": "openType",
+                "value": "contact"
+            }
+        },
+        {
+        	"label": "会话内消息卡片点击跳转小程序路径",
+            "classify": "开放能力",
+        	"description": "仅支持微信小程序，open-type=contact时有效",
+        	"key": "sendMessagePath",
+        	"type": "String",
+        	"default": "当前分享路径",
+            "must": {
+                "key": "openType",
+                "value": "contact"
+            }
+        },
+        {
+        	"label": "会话内消息卡片图片",
+            "classify": "开放能力",
+        	"description": "仅支持微信小程序，open-type=contact时有效",
+        	"key": "sendMessageImg",
+        	"type": "String",
+        	"default": "截图",
+            "must": {
+                "key": "openType",
+                "value": "contact"
+            }
+        },
+        {
+        	"label": "打开群资料卡时，传递的群号",
+            "classify": "开放能力",
+        	"description": "仅支持QQ小程序，open-type=openGroupProfile时有效",
+        	"key": "groupId",
+        	"type": "String",
+        	"default": "",
+            "must": {
+                "key": "openType",
+                "value": "openGroupProfile"
+            }
+        },
+        {
+        	"label": "打开频道页面时，传递的频道号",
+            "classify": "开放能力",
+        	"description": "仅支持QQ小程序，open-type=openGuildProfile时有效",
+        	"key": "guildId",
+        	"type": "String",
+        	"default": "",
+            "must": {
+                "key": "openType",
+                "value": "openGuildProfile"
+            }
+        },
+        {
+        	"label": "打开公众号资料卡时，传递的号码",
+            "classify": "开放能力",
+        	"description": "仅支持QQ小程序，open-type=openPublicProfile时有效",
+        	"key": "publicId",
+        	"type": "String",
+        	"default": "",
+            "must": {
+                "key": "openType",
+                "value": "openPublicProfile"
+            }
+        },
+        {
+        	"label": "显示会话内消息卡片",
+            "classify": "功能",
+        	"description": "仅支持微信小程序，设置此参数为 true，用户进入客服会话会在右下角显示\"可能要发送的小程序\"提示，用户点击后可以快速发送小程序消息，open-type=contact时有效",
+        	"key": "showMessageCard",
+        	"type": "Boolean",
+        	"default": false
+        },
+        {
+        	"label": "禁用",
+        	"description": "",
+            "classify": "功能",
+        	"key": "disabled",
+        	"type": "Boolean",
+        	"default": false
+        },
+        {
+        	"label": "loading",
+        	"description": "仅支持H5、App(App-nvue 平台，在 ios 上为雪花，Android上为圆圈)",
+            "classify": "功能",
+        	"key": "loading",
+        	"type": "Boolean",
+        	"default": false
+        }
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "",
+			"params": []
+		},
+        {
+        	"label": "获取用户手机号回调",
+        	"key": "getphonenumber",
+        	"description": "仅支持微信、支付宝、百度、字节、快手、京东小程序，open-type=getPhoneNumber时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["getPhoneNumber"]
+            }
+        },
+        {
+        	"label": "获取用户信息回调",
+        	"key": "getuserinfo",
+        	"description": "仅支持微信、QQ、百度、快手、京东小程序，open-type=getUserInfo时有效，用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["getUserInfo"]
+            }
+        },
+        {
+        	"label": "使用开放能力时，发生错误的回调",
+        	"key": "error",
+        	"description": "仅支持微信、QQ、快手、京东小程序，open-type=launchApp时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["launchApp"]
+            }
+        },
+        {
+        	"label": "在打开授权设置页并关闭后回调",
+        	"key": "opensetting",
+        	"description": "仅支持微信、QQ、百度、快手、京东小程序，open-type=openSetting时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["openSetting"]
+            }
+        },
+        {
+        	"label": "从小程序打开 App 成功的回调",
+        	"key": "launchapp",
+        	"description": "仅支持微信、QQ、快手、京东小程序，open-type=launchApp时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["launchApp"]
+            }
+        },
+        {
+        	"label": "客服消息回调",
+        	"key": "contact",
+        	"description": "仅支持微信、QQ、百度、快手小程序，open-type=contact时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["contact"]
+            }
+        },
+        {
+        	"label": "获取用户头像回调",
+        	"key": "chooseavatar",
+        	"description": "仅支持微信小程序，open-type=chooseAvatar时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["chooseAvatar"]
+            }
+        },
+        {
+        	"label": "添加群应用的回调",
+        	"key": "addgroupapp",
+        	"description": "仅支持QQ小程序，open-type=addGroupApp时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["addGroupApp"]
+            }
+        },
+        {
+        	"label": "调起用户编辑并选择收货地址的回调",
+        	"key": "chooseaddress",
+        	"description": "仅支持百度小程序，open-type=chooseAddress时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["chooseAddress"]
+            }
+        },
+        {
+        	"label": "用户选择发票抬头的回调",
+        	"key": "chooseinvoicetitle",
+        	"description": "仅支持百度小程序，open-type=chooseInvoiceTitle时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["chooseInvoiceTitle"]
+            }
+        },
+        {
+        	"label": "订阅消息授权回调",
+        	"key": "subscribe",
+        	"description": "仅支持百度小程序，open-type=subscribe时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["subscribe"]
+            }
+        },
+        {
+        	"label": "登录回调",
+        	"key": "login",
+        	"description": "仅支持百度小程序，open-type=login时有效",
+        	"params": [],
+            "must": {
+                "key": "openType",
+                "value": ["login"]
+            }
+        }
+	]
+}

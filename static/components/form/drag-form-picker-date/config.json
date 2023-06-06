@@ -1,0 +1,152 @@
+{
+    "componentName": "drag-form-picker-date",
+    "name": "日期时间选择",
+    "description": "",
+    "order": "6",
+    "disabled": false,
+    "props": [{
+            "label": "双向绑定",
+            "description": "",
+            "key": "v-model",
+            "type": "String",
+            "default": ""
+        },
+        {
+           	"label": "标题",
+            "description": "",
+            "key": "labelText",
+            "type": "String",
+            "default": "日期"
+        },
+        {
+            "label": "类型",
+            "description": "",
+            "key": "type",
+            "type": "String",
+            "default": "datetime",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "日期", "value": "date" },
+                    { "label": "日期范围", "value": "daterange" },
+                    { "label": "日期时间", "value": "datetime" },
+                    { "label": "日期时间范围", "value": "datetimerange"}
+                ]
+            }
+        },
+        {
+            "label": "最小日期",
+            "description": "",
+            "key": "start",
+            "type": "String",
+            "inputType": "dateTime",
+            "default": ""
+        },
+        {
+            "label": "最大日期",
+            "description": "",
+            "key": "end",
+            "type": "String",
+            "inputType": "dateTime",
+            "default": ""
+        },
+        {
+            "label": "返回值格式",
+            "description": "在change事件返回时的格式",
+            "key": "returnType",
+            "type": "String",
+            "default": "string",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "日期字符串", "value": "string" },
+                    { "label": "时间戳", "value": "timestamp" },
+                    { "label": "日期对象", "value": "date", "description": "此格式为js Date对象"}
+                ]
+            }
+        },
+        {
+            "label": "分隔符",
+            "description": "范围选择",
+            "key": "rangeSeparator",
+            "type": "String",
+            "default": "-",
+            "must": {
+                "key": "type",
+                "value": ["daterange", "datetimerange"]
+            }
+        },
+        {
+            "label": "占位内容",
+            "description": "非范围选择时",
+            "key": "placeholder",
+            "type": "String",
+            "default": "",
+            "must": {
+                "key": "type",
+                "value": ["date", "datetime"]
+            }
+        },
+        {
+            "label": "开始日期占位内容",
+            "description": "范围选择",
+            "key": "startPlaceholder",
+            "type": "String",
+            "default": "",
+            "must": {
+                "key": "type",
+                "value": ["daterange", "datetimerange"]
+            }
+        },
+        {
+            "label": "结束日期占位内容",
+            "description": "范围选择",
+            "key": "endPlaceholder",
+            "type": "String",
+            "default": "",
+            "must": {
+                "key": "type",
+                "value": ["daterange", "datetimerange"]
+            }
+        },
+        {
+            "label": "禁用",
+            "description": "",
+            "key": "disabled",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "边框",
+            "description": "",
+            "key": "border",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "清除按钮",
+            "description": "",
+            "key": "clearIcon",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "显示秒",
+            "description": "",
+            "key": "hideSecond",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+        "label": "确定日期时间时触发的事件",
+        "key": "change",
+        "description": "参数为当前选择的日期对象，单选返回日期字符串，如：'2010-02-3'；范围选返回日期字符串数组，如：['2020-10-1', '2021-4-1']",
+        "params": []
+    },{
+        "label": "点击遮罩层触发",
+        "key": "maskClick",
+        "description": "",
+        "params": []
+    }]
+}

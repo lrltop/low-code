@@ -1,0 +1,55 @@
+{
+    "componentName": "drag-base-image",
+    "name": "图片",
+    "description": "图片",
+    "order": "3",
+    "iStyle": {
+        "display": "inline-block"
+    },
+    "props": [{
+            "label": "图片链接",
+            "description": "图片链接",
+            "key": "src",
+            "type": "String",
+            "default": "http://img.lemeitu.com/m00/a0/5c/ffc3c39d289296db3b97effa924d4bb6__w.jpg",
+            "inputType": "image"
+        },
+        {
+            "label": "裁剪缩放模式",
+            "description": "图片裁剪、缩放的模式",
+            "key": "mode",
+            "type": "String",
+            "default": "widthFix",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "imageMode"
+            }
+        },
+        {
+            "label": "长按识别小程序码菜单",
+            "description": "开启长按图片显示识别小程序码菜单",
+            "key": "showMenuByLongpress",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+            "label": "点击事件",
+            "key": "click",
+            "description": "点击事件",
+            "params": []
+        },
+        {
+            "label": "图片加载错误事件",
+            "key": "error",
+            "description": "图片加载错误时触发",
+            "params": []
+        },
+        {
+            "label": "图片载入完毕事件",
+            "key": "load",
+            "description": "图片载入完毕时触发",
+            "params": []
+        }
+    ]
+}

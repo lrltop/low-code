@@ -1,0 +1,97 @@
+{
+	"componentName": "drag-form-picker-time",
+	"name": "时间选择器",
+	"description": "不支持快手小程序",
+    "disabled": true,
+    "order": "7",
+	"props": [
+		{
+			"label": "双向绑定",
+			"description": "",
+			"key": "v-model",
+			"type": "String",
+			"default": ""
+		},
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "labelText",
+        	"type": "String",
+        	"default": "时间"
+        },
+        {
+        	"label": "标题宽度",
+        	"description": "",
+        	"key": "labelWidth",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "120rpx"
+        },
+        {
+        	"label": "标题文字大小",
+        	"description": "",
+        	"key": "labelFontSize",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "30rpx"
+        },
+        {
+        	"label": "标题文字颜色",
+        	"description": "",
+        	"key": "labelColor",
+        	"type": "String",
+        	"inputType": "color",
+        	"default": "#333333"
+        },
+        {
+        	"label": "输入框边框大小",
+        	"description": "",
+        	"key": "borderWidth",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "1px"
+        },
+        {
+        	"label": "输入框边框颜色",
+        	"description": "",
+        	"key": "borderColor",
+        	"type": "String",
+        	"inputType": "color",
+        	"default": "#f5f5f5"
+        },
+        {
+        	"label": "输入框边框样式",
+        	"description": "",
+        	"key": "borderStyle",
+        	"type": "String",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "borderStyle"
+            },
+        	"default": "solid"
+        },
+        {
+        	"label": "输入框边框圆角大小",
+        	"description": "",
+        	"key": "borderRadius",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "5rpx"
+        },
+		{
+			"label": "是否禁用",
+			"description": "",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "点击事件",
+			"params": []
+		}
+	]
+}

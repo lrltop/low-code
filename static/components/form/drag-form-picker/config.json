@@ -1,0 +1,49 @@
+{
+	"componentName": "drag-form-picker",
+	"name": "普通选择器",
+	"description": "",
+    "disabled":true,
+    "order": "3",
+	"props": [
+		{
+			"label": "双向绑定",
+			"description": "",
+			"key": "v-model",
+			"type": "String",
+			"default": ""
+		},
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "labelText",
+        	"type": "String",
+        	"default": "普通选择"
+        },
+		{
+			"label": "选项数据",
+			"description": "",
+			"key": "columns",
+			"type": "Array",
+            "inputType": "datacom",
+            "inputProps": {
+                "levelCount": 1
+            },
+			"default": []
+		},
+		{
+			"label": "禁用",
+			"description": "",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "点击事件",
+			"params": []
+		}
+	]
+}

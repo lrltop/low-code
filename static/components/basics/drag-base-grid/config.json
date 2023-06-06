@@ -1,0 +1,150 @@
+{
+    "componentName": "drag-base-grid",
+    "name": "宫格布局",
+    "description": "",
+    "order": "9999",
+    "props": [{
+            "label": "宫格数据",
+            "description": "宫格数据",
+            "classify": "数据",
+            "key": "list",
+            "type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "Object",
+                "itemInputProps": {
+                    "props": {
+                        "name": {
+                            "label": "文字",
+                            "inputType": "text",
+                            "inputProps": {},
+                            "default": "文字"
+                        },
+                        "icon": {
+                            "label": "图标",
+                            "inputType": "icon",
+                            "inputProps": {},
+                            "default": "uview:photo"
+                        },
+                        "iconColor": {
+                            "label": "图标颜色",
+                            "inputType": "color",
+                            "inputProps": {},
+                            "default": ""
+                        }
+                    }
+                }
+            },
+            "default": [{
+                    "name": "图片",
+                    "icon": "uview:photo"
+                },
+                {
+                    "name": "预警",
+                    "icon": "uview:error-circle-fill"
+                },
+                {
+                    "name": "自定义图片",
+                    "icon": "image:http://img.lemeitu.com/m00/2f/50/840c937f211bd6b195d919b267263f59__w.jpg"
+                },
+                {
+                    "name": "沙漏",
+                    "icon": "uview:hourglass",
+                    "iconColor": "#2979ff"
+                },
+                {
+                    "name": "首页",
+                    "icon": "uview:home"
+                },
+                {
+                    "name": "星星",
+                    "icon": "uview:star",
+                    "iconBoxbackground": "#2979ff",
+                    "iconColor": "#ffffff"
+                }
+            ]
+        }, {
+            "label": "宫格列数",
+            "classify": "布局",
+            "description": "",
+            "key": "col",
+            "type": "Number",
+            "default": 3
+        }, {
+            "label": "边框",
+            "classify": "样式",
+            "description": "是否显示宫格的边框",
+            "key": "border",
+            "type": "Boolean",
+            "default": true
+        }, {
+            "label": "对齐方式",
+            "classify": "布局",
+            "description": "宫格的对齐方式，用于控制只有一两个宫格时的对齐场景",
+            "key": "align",
+            "type": "String",
+            "default": "left",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左对齐", "value": "left" },
+                    { "label": "居中对齐", "value": "center" }
+                ]
+            }
+        },
+        {
+            "label": "宫格高度",
+            "description": "",
+            "classify": "样式",
+            "key": "itemHeight",
+            "type": "Number",
+            "default": 200
+        },
+        {
+            "label": "图标容器大小",
+            "description": "",
+            "classify": "样式",
+            "key": "iconBoxSize",
+            "type": "Number",
+            "default": 60
+        },
+        {
+            "label": "图标容器圆角",
+            "description": "",
+            "classify": "样式",
+            "key": "iconBoxRadius",
+            "type": "Number",
+            "default": 8
+        },
+        {
+            "label": "图标大小",
+            "classify": "样式",
+            "description": "图标大小",
+            "key": "iconSize",
+            "type": "Number",
+            "default": 24
+        },
+        {
+            "label": "文字大小",
+            "classify": "样式",
+            "description": "文字大小",
+            "key": "fontSize",
+            "type": "Number",
+            "default": 32
+        },
+        {
+            "label": "图标与文字距离",
+            "description": "",
+            "classify": "样式",
+            "key": "textDistance",
+            "type": "Number",
+            "default": 8
+        }
+    ],
+    "events": [{
+        "label": "点击事件",
+        "key": "click",
+        "description": "点击某个宫格触发",
+        "params": []
+    }]
+}

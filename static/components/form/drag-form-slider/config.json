@@ -1,0 +1,120 @@
+{
+    "componentName": "drag-form-slider",
+    "name": "滑动选择器",
+    "description": "",
+    "props": [{
+            "label": "双向绑定",
+            "description": "",
+            "key": "v-model",
+            "type": "String",
+            "default": ""
+        },
+        {
+        	"label": "标题",
+           	"description": "",
+            "key": "labelText",
+            "type": "String",
+            "default": "滑动选择"
+        },
+        {
+            "label": "滑块的大小",
+            "classify": "样式",
+            "description": "取值范围为 12 - 28",
+            "key": "blockSize",
+            "type": "Number",
+            "default": 18,
+            "inputType": "Number",
+            "inputProps": {
+                "max": 28,
+                "min": 12
+            }
+        },
+        {
+            "label": "最大值",
+            "description": "",
+            "key": "max",
+            "type": "Number",
+            "default": 100
+        },
+        {
+            "label": "最小值",
+            "description": "",
+            "key": "min",
+            "type": "Number",
+            "default": 0
+        },
+        {
+            "label": "步长",
+            "description": "取值必须大于 0，并且可被(max - min)整除",
+            "key": "step",
+            "type": "Number",
+            "default": 1,
+            "inputProps": {
+                "min": 0
+            }
+        },
+        {
+            "label": "已选择线条颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "activeColor",
+            "type": "String",
+            "inputType": "color",
+            "default": "#2979ff",
+            "inputProps": {
+                "showAlpha": false
+            }
+        },
+        {
+            "label": "未选择线条颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "backgroundColor",
+            "type": "String",
+            "inputType": "color",
+            "default": "#c0c4cc",
+            "inputProps": {
+                "showAlpha": false
+            }
+        },
+        {
+            "label": "滑块颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "blockColor",
+            "type": "String",
+            "inputType": "color",
+            "default": "#ffffff",
+            "inputProps": {
+                "showAlpha": false
+            }
+        },
+        {
+            "label": "禁用",
+            "description": "",
+            "key": "disabled",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "显示当前值",
+            "description": "",
+            "key": "showValue",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+            "label": "拖动过程中事件",
+            "key": "changing",
+            "description": "",
+            "params": []
+        },
+        {
+            "label": "滑动结束事件",
+            "key": "change",
+            "description": "",
+            "params": []
+        }
+    ]
+}

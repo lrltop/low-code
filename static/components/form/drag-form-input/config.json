@@ -1,0 +1,292 @@
+{
+	"componentName": "drag-form-input",
+	"name": "输入框",
+	"description": "",
+	"props": [
+        {
+        	"label": "双向绑定",
+        	"description": "",
+        	"key": "v-model",
+        	"type": "String",
+        	"default": ""
+        },
+		{
+			"label": "输入框类型",
+            "classify": "功能",
+			"description": "请注意平台差异化",
+			"key": "type",
+			"type": "String",
+			"default": "text",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "文本输入键盘", "value": "text"},
+                    { "label": "数字输入键盘", "value": "number", "description": "均支持，App平台、H5平台 3.1.22 以下版本 vue 页面在 iOS 平台显示的键盘包含负数和小数。"},
+                    { "label": "身份证输入键盘", "value": "idcard", "description": "仅支持微信、支付宝、百度、QQ小程序、快手小程序、京东小程序"},
+                    { "label": "带小数点的数字键盘", "value": "digit", "description": "App平台、H5平台 vue 页面在 iOS 平台显示的键盘包含负数"},
+                    { "label": "密码安全输入键盘", "value": "safe-password", "description": "仅支持微信小程序"},
+                    { "label": "昵称输入键盘", "value": "nickname", "description": "仅支持微信小程序"}
+                ]
+            }
+		},
+		{
+			"label": "标题",
+            "classify": "功能",
+			"description": "",
+			"key": "labelText",
+			"type": "String",
+			"default": "标题"
+		},
+        {
+        	"label": "标题文字颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelColor",
+        	"type": "String",
+        	"inputType": "color",
+        	"default": "#333333"
+        },
+        {
+        	"label": "输入框边框颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "borderColor",
+        	"type": "String",
+        	"inputType": "color",
+        	"default": "#f5f5f5"
+        },
+        {
+        	"label": "标题宽度",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelWidth",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "100rpx"
+        },
+        {
+        	"label": "标题文字大小",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelFontSize",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "28rpx"
+        },
+        {
+        	"label": "输入框边框大小",
+        	"description": "",
+            "classify": "样式",
+        	"key": "borderWidth",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "1px"
+        },
+        {
+        	"label": "输入框边框圆角大小",
+        	"description": "",
+            "classify": "样式",
+        	"key": "borderRadius",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "5rpx"
+        },
+        {
+        	"label": "输入框边框样式",
+        	"description": "",
+            "classify": "样式",
+        	"key": "borderStyle",
+        	"type": "String",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "borderStyle"
+            },
+        	"default": "solid"
+            
+        },
+		{
+			"label": "为空时占位符",
+			"description": "",
+            "classify": "功能",
+			"key": "placeholder",
+			"type": "String",
+			"default": "请输入"
+		},
+		{
+			"label": "最大输入长度",
+            "classify": "功能",
+			"description": "设置为 -1 的时候不限制最大长度",
+			"key": "maxlength",
+			"type": "Number",
+			"default": 140
+		},
+		{
+			"label": "光标与键盘的距离",
+			"description": "指定光标与键盘的距离，单位 px，取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离, 仅支持App、微信小程序、百度小程序、QQ小程序、京东小程序",
+			"key": "cursorSpacing",
+            "classify": "功能",
+			"type": "Number",
+			"default": 0,
+            "inputProps": {
+                "suffixText": "px"
+            }
+		},
+        {
+        	"label": "密码类型",
+            "classify": "功能",
+        	"description": "H5和App写此属性时，type失效",
+        	"key": "password",
+        	"type": "Boolean",
+        	"default": false
+        },
+		{
+			"label": "禁用",
+			"description": "",
+            "classify": "功能",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "显示清除按钮",
+			"description": "",
+            "classify": "功能",
+			"key": "clearable",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "获取焦点",
+            "classify": "功能",
+			"description": "在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现",
+			"key": "focus",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "获取焦点时光标位置",
+			"description": "",
+            "classify": "功能",
+			"key": "cursor",
+			"type": "Number",
+			"default": ""
+		},
+		{
+			"label": "光标起始位置",
+            "classify": "功能",
+			"description": "需与selectionEnd搭配使用, 自动聚集时有效，需要开启获取焦点(focus)",
+			"key": "selectionStart",
+			"type": "Number",
+			"default": -1,
+            "must": {
+                "key": "focus",
+                "value": [true]
+            }
+		},
+		{
+			"label": "光标结束位置",
+            "classify": "功能",
+			"description": "需与selectionStart搭配使用，自动聚集时有效，需要开启获取焦点(focus)",
+			"key": "selectionEnd",
+			"type": "Number",
+			"default": -1,
+            "must": {
+                "key": "focus",
+                "value": [true]
+            }
+		},
+		{
+			"label": "键盘右下角按钮文字",
+			"description": "仅在 type=\"text\" 时生效，仅支持微信小程序、App、H5、快手小程序、京东小程序",
+            "classify": "功能",
+			"key": "confirmType",
+			"type": "String",
+			"default": "done",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "完成", "value": "done", "description": "仅支持微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)"},
+                    { "label": "发送", "value": "send", "description": "仅支持微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)"},
+                    { "label": "搜索", "value": "search", "description": ""},
+                    { "label": "下一个", "value": "send", "description": "仅支持微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)"},
+                    { "label": "前往", "value": "go", "description": ""}
+                ]
+            },
+            "must": {
+                "key": "type",
+                "value": ["text"]
+            }
+		},
+		{
+			"label": "点击键盘右下角按钮时保持键盘不收起",
+            "classify": "功能",
+			"description": "仅支持App(hbx3.3.7+)、H5 (hbx3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序",
+			"key": "confirmHold",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "键盘弹起自动上推页面",
+            "classify": "功能",
+			"description": "仅支持App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序",
+			"key": "adjustPosition",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "键盘收起自动失去焦点",
+            "classify": "功能",
+			"description": "仅支持App（hbx3.0.0+）",
+			"key": "autoBlur",
+			"type": "Boolean",
+			"default": false
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "",
+			"params": []
+		},
+        {
+        	"label": "输入时触发",
+        	"key": "input",
+        	"description": "",
+        	"params": []
+        },
+        {
+        	"label": "点击清除按钮时触发",
+        	"key": "clear",
+        	"description": "",
+        	"params": []
+        },
+        {
+        	"label": "输入框聚焦时触发",
+        	"key": "focus",
+        	"description": "",
+        	"params": []
+        },
+        {
+        	"label": "输入框失去焦点时触发",
+        	"key": "blur",
+        	"description": "快手小程序不支持",
+        	"params": []
+        },
+        {
+        	"label": "点击完成按钮时触发",
+        	"key": "confirm",
+        	"description": "快手小程序不支持",
+        	"params": []
+        },
+        {
+        	"label": "键盘高度发生变化的时候触发此事件",
+        	"key": "keyboardheightchange",
+        	"description": "仅支持微信小程序基础库2.7.0+、App (hbx3.1.0+)",
+        	"params": []
+        }
+	],
+    "slot": {
+        "default": "组件右侧"
+    }
+}

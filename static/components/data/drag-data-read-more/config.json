@@ -1,0 +1,104 @@
+{
+	"componentName": "drag-data-read-more",
+	"name": "展开阅读更多",
+	"description": "该组件一般用于内容较长，预先收起一部分，点击展开全部内容的场景。",
+	"disabled": true,
+    "order": "5",
+	"props": [
+	    {
+			"label": "内容超出此高度才会显示展开全文按钮",
+			"description": "",
+			"key": "showHeight",
+			"type": "String",
+			"inputType": "size",
+			"default": "400px"
+		},
+	    {
+			"label": "展开后是否显示收起按钮",
+			"description": "",
+			"key": "toggle",
+			"type": "Boolean",
+	        "inputType": "boolean",
+			"default": false
+		},
+	    {
+			"label": "关闭时的提示文字",
+			"description": "",
+			"key": "closeText",
+			"type": "String",
+	        "inputType": "text",
+			"default": "展开阅读全文"
+		},
+	    {
+			"label": "展开时的提示文字",
+			"description": "",
+			"key": "openText",
+			"type": "String",
+	        "inputType": "text",
+			"default": "收起"
+		},
+		{
+			"label": "提示文字的颜色",
+			"description": "",
+			"key": "color",
+			"type": "String",
+			"default": "#2979ff",
+			"inputType": "color"
+		},
+	    {
+	    	"label": "提示文字的大小",
+	    	"description": "",
+	    	"key": "fontSize",
+	    	"type": "String",
+	        "inputType": "size",
+	    	"default": "14px",
+            "sectionMode": "fontSize"
+	    },
+	    {
+	    	"label": "对阴影的自定义处理",
+	    	"description": "对象格式样式，点击编辑数据查看演示数据",
+	    	"key": "shadowStyle",
+	    	"type": "Object",
+	        "inputType": "jsonEditor",
+	    	"default": {
+                "backgroundImage": "linear-gradient(to top, #fff, rgba(255, 255, 255, 0.5))",
+                "paddingTop": "100px",
+                "marginTop": "-100px"
+            }
+	    },
+	    {
+	    	"label": "段落首行缩进的字符个数",
+	    	"description": "以css em为单位",
+	    	"key": "textIndent",
+	    	"type": "String",
+	        "inputType": "text",
+	    	"default": "2em"
+	    },
+	    {
+	    	"label": "用于在open和close事件中当作回调参数返回",
+	    	"description": "",
+	    	"key": "name",
+	    	"type": "String",
+	        "inputType": "text",
+	    	"default": ""
+	    }
+		
+	],
+	"events": [
+		{
+			"label": "内容被展开时触发，$event为传入的name参数值",
+			"key": "open",
+			"description": "",
+			"params": []
+		},
+	    {
+	    	"label": "内容被收起时触发，$event为传入的name参数值",
+	    	"key": "close",
+	    	"description": "",
+	    	"params": []
+	    }
+	],
+	"slot": {
+	    "default": "内容"
+	}
+}

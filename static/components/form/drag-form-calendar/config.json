@@ -1,0 +1,243 @@
+{
+	"componentName": "drag-form-calendar",
+	"name": "日历选择",
+	"description": "",
+    "order": "5",
+	"props": [
+		{
+			"label": "双向绑定",
+			"description": "日历组件双向绑定为数组",
+			"key": "v-model",
+			"type": "Array",
+			"default": ""
+		},
+        {
+        	"label": "标题",
+            "classify": "功能",
+        	"description": "",
+        	"key": "labelText",
+        	"type": "String",
+        	"default": "日历"
+        },
+        {
+        	"label": "日期类型",
+        	"description": "",
+            "classify": "功能",
+        	"key": "mode",
+        	"type": "String",
+        	"default": "single",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "单个日期", "value": "single"},
+                    { "label": "选择多个日期", "value": "multiple"},
+                    { "label": "选择日期范围", "value": "range"}
+                ]
+            }
+        },
+        {
+        	"label": "日历标题",
+        	"description": "",
+            "classify": "功能",
+        	"key": "title",
+        	"type": "String",
+        	"default": "日期选择"
+        },
+        {
+        	"label": "确定按钮文字",
+            "classify": "功能",
+        	"description": "",
+        	"key": "confirmText",
+        	"type": "String",
+        	"default":"确定"
+        },
+        {
+        	"label": "日期个数不足1个时底部按钮文字",
+        	"description": "",
+            "classify": "功能",
+        	"key": "confirmDisabledText",
+        	"type": "String",
+        	"default":"确定",
+            "must": {
+                "key": "mode",
+                "value": ["range"]
+            }
+        },
+        {
+        	"label": "第一个日期底部的提示文字",
+            "classify": "功能",
+        	"description": "mode=range",
+        	"key": "startText",
+        	"type": "String",
+        	"default": "开始",
+            "must": {
+                "key": "mode",
+                "value": ["range"]
+            }
+        },
+        {
+        	"label": "最后一个日期底部的提示文字",
+        	"description": "mode=range",
+            "classify": "功能",
+        	"key": "endText",
+        	"type": "String",
+        	"default": "结束",
+            "must": {
+                "key": "mode",
+                "value": ["range"]
+            }
+        },
+        {
+        	"label": "最大展示月份数量",
+            "classify": "限制",
+        	"description": "",
+        	"key": "monthNum",
+        	"type": "Number",
+        	"default": 3
+        },
+        {
+        	"label": "最小可选日期",
+        	"description": "",
+            "classify": "限制",
+        	"key": "minDate",
+        	"type": "String",
+            "inputType": "dateTime",
+            "inputProps": {
+                
+            },
+        	"default": ""
+        },
+        {
+        	"label": "最大可选日期",
+            "classify": "限制",
+        	"description": "",
+        	"key": "maxDate",
+        	"type": "String",
+            "inputType": "dateTime",
+            "inputProps": {
+                
+            },
+        	"default": ""
+        },
+        {
+        	"label": "最多可选多少个日期",
+            "classify": "限制",
+        	"description": "mode=multiple有效",
+        	"key": "maxCount",
+        	"type": "Number",
+        	"default": 999,
+            "must": {
+                "key": "mode",
+                "value": ["multiple"]
+            }
+        },
+        {
+        	"label": "日期区间最多可选天数",
+        	"description": "mode=range有效",
+            "classify": "限制",
+        	"key": "maxRange",
+        	"type": "Number",
+        	"default": 999,
+            "must": {
+                "key": "mode",
+                "value": ["range"]
+            }
+        },
+        {
+        	"label": "选择超过最多可选天数时的提示文案",
+            "classify": "功能",
+        	"description": "mode=range有效，不填不显示",
+        	"key": "rangePrompt",
+        	"type": "String",
+        	"default": "",
+            "must": {
+                "key": "mode",
+                "value": ["range"]
+            }
+        },
+        {
+        	"label": "允许起止时间为同一天",
+            "classify": "限制",
+        	"description": "日期范围，mode=range有效",
+        	"key": "allowSameDay",
+        	"type": "Boolean",
+        	"default": false,
+            "must": {
+                "key": "mode",
+                "value": ["range"]
+            }
+        },
+        {
+        	"label": "主题色",
+            "classify": "样式",
+        	"description": "对底部按钮和选中日期有效",
+        	"key": "color",
+        	"type": "String",
+            "inputType": "color",
+        	"default": "#3c9cff"
+        },
+        {
+        	"label": "日期行高",
+            "classify": "样式",
+        	"description": "",
+        	"key": "rowHeight",
+        	"type": "Number",
+        	"default": 56
+        },
+		{
+			"label": "只读状态",
+            "classify": "功能",
+			"description": "",
+			"key": "readonly",
+			"type": "Boolean",
+			"default": false
+		},
+        {
+        	"label": "日历副标题",
+            "classify": "功能",
+        	"description": "",
+        	"key": "showSubtitle",
+        	"type": "Boolean",
+        	"default": true
+        },
+        {
+        	"label": "显示农历",
+        	"description": "",
+            "classify": "功能",
+        	"key": "showLunar",
+        	"type": "Boolean",
+        	"default": false
+        },
+        {
+        	"label": "圆角值",
+            "classify": "样式",
+        	"description": "",
+        	"key": "round",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "0"
+        },
+        {
+        	"label": "显示月份背景色",
+            "classify": "样式",
+        	"description": "",
+        	"key": "showMark",
+        	"type": "Boolean",
+        	"default": false
+        }
+	],
+	"events": [
+		{
+			"label": "日期选择完成后触发",
+			"key": "confirm",
+			"description": "",
+			"params": []
+		},
+        {
+        	"label": "日历关闭时触发",
+        	"key": "close",
+        	"description": "",
+        	"params": []
+        }
+	]
+}

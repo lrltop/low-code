@@ -1,0 +1,38 @@
+{
+	"componentName": "drag-form-picker-level",
+	"name": "选择器",
+	"description": "",
+    "order": "4",
+	"props": [
+		{
+			"label": "双向绑定",
+			"description": "",
+			"key": "v-model",
+			"type": "String",
+			"default": ""
+		},
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "labelText",
+        	"type": "String",
+        	"default": "级联选择"
+        },
+		{
+			"label": "选项数据",
+			"description": "",
+			"key": "columns",
+			"type": "Array",
+            "inputType": "datacom",
+			"default": []
+		}
+	],
+	"events": [
+        {
+        	"label": "选择数据事件",
+        	"key": "change",
+        	"description": "",
+        	"params": []
+        }
+	]
+}

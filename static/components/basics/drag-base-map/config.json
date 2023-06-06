@@ -1,0 +1,305 @@
+{
+    "componentName": "drag-base-map",
+    "name": "地图",
+    "description": "H5、APP如无特殊必要，建议使用高德地图,需要向高德申请SDK资质，获取AppKey，打包时需要在全局配置中勾选相应模块，在SDK配置中填写Appkey",
+    "order": "1000",
+    "customHandleStyle":true,
+    "props": [{
+            "label": "经度",
+            "description": "地图中心经度",
+            "key": "longitude",
+            "type": "Number",
+            "default": 104.07
+        },
+        {
+            "label": "纬度",
+            "description": "地图中心纬度",
+            "key": "latitude",
+            "type": "Number",
+            "default": 30.67
+        },
+        {
+            "label": "缩放",
+            "description": "缩放级别，取值范围为3-20",
+            "key": "scale",
+            "type": "Number",
+            "default": 14
+        },
+        {
+            "label": "最小缩放",
+            "description": "最小缩放级别",
+            "key": "minScale",
+            "type": "Number",
+            "default": 3
+        },
+        {
+            "label": "最大缩放",
+            "description": "最大缩放级别",
+            "key": "maxScale",
+            "type": "Number",
+            "default": 20
+        },
+        {
+            "label": "标记点",
+            "description": "标记点",
+            "key": "markers",
+            "type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "Object",
+                "itemInputProps": {
+                    "props": {
+                        "id": {
+                            "label": "标记点id",
+                            "inputType": "number",
+                            "description": "marker点击事件回调会返回此id。建议为每个marker设置上Number类型id，保证更新marker时有更好的性能。最大限制9位数",
+                            "inputProps": {
+                                "max": 999999999,
+                                "random": true
+                            }
+                        },
+                        "latitude": {
+                            "label": "纬度",
+                            "inputType": "number",
+                            "description": "浮点数，范围 -90 ~ 90",
+                            "inputProps": {
+                                "max": 90,
+                                "min": -90,
+                                "random": true
+                            },
+                            "default": 30.671
+                        },
+                        "longitude": {
+                            "label": "经度",
+                            "inputType": "number",
+                            "description": "浮点数，范围 -180 ~ 180",
+                            "inputProps": {
+                                "max": 180,
+                                "min": -180
+                            },
+                            "default": 104.063
+                        },
+                        "iconPath": {
+                            "label": "显示的图标",
+                            "inputType": "image",
+                            "description": "项目目录下的图片路径，支持相对路径写法，以'/'开头则表示相对小程序根目录；也支持临时路径",
+                            "inputProps": {},
+                            "default": "/static/components/basics/drag-base-map/marker.png"
+                        }
+                    }
+                }
+            },
+            "default": [{
+                "id": "0001",
+                "longitude": 104.063,
+                "latitude": 30.671,
+                "iconPath": "/static/components/basics/drag-base-map/marker.png"
+            }]
+        },
+        {
+            "label": "路线",
+            "description": "路线",
+            "key": "polyline",
+            "type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "Object",
+                "itemInputProps": {
+                    "props": {
+                        "points": {
+                            "label": "经纬度数组",
+                            "inputType": "array",
+                            "default": [],
+                            "inputProps": {
+                                "itemInputType": "object",
+                                "itemInputProps": {
+                                    "props": {
+                                        "latitude": {
+                                            "label": "纬度",
+                                            "inputType": "number",
+                                            "description": "浮点数，范围 -90 ~ 90",
+                                            "inputProps": {
+                                                "max": 90,
+                                                "min": -90,
+                                                "random": true
+                                            },
+                                            "default": 30.671
+                                        },
+                                        "longitude": {
+                                            "label": "经度",
+                                            "inputType": "number",
+                                            "description": "浮点数，范围 -180 ~ 180",
+                                            "inputProps": {
+                                                "max": 180,
+                                                "min": -180
+                                            },
+                                            "default": 104.063
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "color": {
+                            "label": "线的颜色",
+                            "inputType": "color",
+                            "inputProps": {
+                                "outputFormat": "hex"
+                            },
+                            "default": ""
+                        },
+                        "width": {
+                            "label": "线的宽度",
+                            "inputType": "number",
+                            "inputProps": {},
+                            "default": 2
+                        },
+                        "dottedLine": {
+                            "label": "是否虚线",
+                            "inputType": "boolean",
+                            "inputProps": {},
+                            "default": false
+                        },
+                        "arrowLine": {
+                            "label": "带箭头的线",
+                            "inputType": "boolean",
+                            "description": "仅支持App-nvue 2.1.5+、微信小程序、百度小程序、京东小程序",
+                            "inputProps": {},
+                            "default": true
+                        },
+                        "borderWidth": {
+                            "label": "线的厚度",
+                            "inputType": "number",
+                            "description": "仅支持微信小程序、H5、百度小程序、京东小程序",
+                            "inputProps": {},
+                            "default": 1
+                        },
+                        "borderColor": {
+                            "label": "线的边框颜色",
+                            "inputType": "color",
+                            "inputProps": {
+                                "outputFormat": "hex"
+                            },
+                            "default": "#409EFF"
+                        }
+                    }
+                }
+            },
+            "default": [{
+                "points": [{
+                        "longitude": 104.07,
+                        "latitude": 30.67
+                    },
+                    {
+                        "longitude": 104.08,
+                        "latitude": 30.67
+                    }
+                ],
+                "color": "#F56C6C",
+                "width": 2,
+                "dottedLine": false,
+                "arrowLine": true,
+                "borderWidth": 1,
+                "borderColor": "#409EFF"
+            }]
+        },
+        {
+            "label": "圆",
+            "description": "在地图上显示圆",
+            "key": "circles",
+            "type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "object",
+                "itemDefault": [],
+                "itemInputProps": {
+                    "props": {
+                        "latitude": {
+                            "label": "纬度",
+                            "inputType": "number",
+                            "description": "浮点数，范围 -90 ~ 90",
+                            "inputProps": {
+                                "max": 90,
+                                "min": -90,
+                                "random": true
+                            },
+                            "default": 30.67
+                        },
+                        "longitude": {
+                            "label": "经度",
+                            "inputType": "number",
+                            "description": "浮点数，范围 -180 ~ 180",
+                            "inputProps": {
+                                "max": 180,
+                                "min": -180
+                            },
+                            "default": 104.07
+                        },
+                        "color": {
+                            "label": "描边颜色",
+                            "inputType": "color",
+                            "inputProps": {
+                                "outputFormat": "hex"
+                            },
+                            "default": "#409EFF"
+                        },
+                        "fillColor": {
+                            "label": "填充颜色",
+                            "inputType": "color",
+                            "inputProps": {
+                                "outputFormat": "hex"
+                            },
+                            "default": "#F56C6C"
+                        },
+                        "radius": {
+                            "label": "半径",
+                            "inputType": "number",
+                            "inputProps": {},
+                            "default": 100
+                        },
+                        "strokeWidth": {
+                            "label": "描边的宽度",
+                            "inputType": "number",
+                            "description": "",
+                            "inputProps": {},
+                            "default": 1
+                        }
+                    }
+                }
+            },
+            "default": [{
+                "longitude": 104.07,
+                "latitude": 30.67,
+                "radius": 100,
+                "color": "#409EFF",
+                "fillColor": "#F56C6C"
+            }]
+        },
+        {
+            "label": "卫星图",
+            "description": "是否开启卫星图(App-nvue 2.1.5+、微信小程序2.7.0)",
+            "key": "enableSatellite",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "实时路况",
+            "description": "是否开启实时路况(App-nvue 2.1.5+、微信小程序2.7.0)",
+            "key": "enableTraffic",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+            "label": "视野变化",
+            "key": "mapRegionchange",
+            "description": "视野发生变化时触发",
+            "params": []
+        },
+        {
+            "label": "地图点击",
+            "key": "mapTap",
+            "description": "mapTap",
+            "params": []
+        }
+    ]
+}

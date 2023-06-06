@@ -1,0 +1,157 @@
+{
+	"componentName": "drag-base-tag",
+	"name": "标签",
+	"description": "",
+    "order": "5",
+    "iStyle": {
+        "display": "inline-block"
+    },
+	"props": [
+		{
+			"label": "文字内容",
+            "classify": "文字",
+			"description": "",
+			"key": "text",
+			"type": "String",
+			"default": "标签"
+		},
+		{
+			"label": "主题类型",
+            "classify": "样式",
+			"description": "",
+			"key": "type",
+			"type": "String",
+			"default": "primary",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "默认", "value": "primary"},
+                    { "label": "成功", "value": "success"},
+                    { "label": "警告", "value": "warning"},
+                    { "label": "错误", "value": "error"}
+                ]
+            }
+		},
+		{
+			"label": "禁用",
+			"description": "",
+            "classify": "功能",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "标签大小",
+			"description": "",
+            "classify": "样式",
+			"key": "size",
+			"type": "String",
+			"default": "medium",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "大", "value": "large"},
+                    { "label": "中", "value": "medium"},
+                    { "label": "小", "value": "mini"}
+                ]
+            }
+		},
+		{
+			"label": "标签形状",
+			"description": "",
+            "classify": "样式",
+			"key": "shape",
+			"type": "String",
+			"default": "square",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "方形", "value": "square"},
+                    { "label": "圆形", "value": "circle"}
+                ]
+            }
+		},
+		{
+			"label": "背景颜色",
+			"description": "会覆盖主题",
+            "classify": "样式",
+			"key": "bgColor",
+			"type": "String",
+			"default": "",
+			"inputType": "color"
+		},
+		{
+			"label": "标签字体颜色",
+			"description": "会覆盖主题",
+            "classify": "样式",
+			"key": "color",
+			"type": "String",
+			"default": "",
+			"inputType": "color"
+		},
+		{
+			"label": "标签边框颜色",
+			"description": "会覆盖主题",
+            "classify": "样式",
+			"key": "borderColor",
+			"type": "String",
+			"default": "",
+			"inputType": "color"
+		},
+		{
+			"label": "关闭图标",
+			"description": "",
+            "classify": "功能",
+			"key": "closable",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "关闭图标颜色",
+			"description": "",
+            "classify": "样式",
+			"key": "closeColor",
+			"type": "String",
+			"default": "",
+			"inputType": "color",
+		    "must": {
+		        "key": "closable",
+		        "value": [true]
+		    }
+		},
+		{
+			"label": "镂空",
+            "classify": "功能",
+			"description": "",
+			"key": "plain",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "镂空时填充背景色",
+			"description": "",
+            "classify": "功能",
+			"key": "plainFill",
+			"type": "Boolean",
+			"default": false,
+		    "must": {
+		        "key": "plain",
+		        "value": [true]
+		    }
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "",
+			"params": []
+		},
+        {
+        	"label": "closable为true时，点击标签关闭按钮触发",
+        	"key": "close",
+        	"description": "",
+        	"params": []
+        }
+	]
+}

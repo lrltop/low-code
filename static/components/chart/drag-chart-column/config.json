@@ -1,0 +1,307 @@
+{
+    "componentName": "drag-chart-column",
+    "disabled": false,
+    "name": "柱状图",
+    "description": "",
+    "order": 1,
+    "customHandleStyle": true,
+    "props": [
+        {
+            "label": "图表数据",
+            "description": "",
+            "key": "chartData",
+            "type": "Object",
+            "inputType": "object",
+            "inputProps": {
+                "props": {
+                    "categories": {
+                        "label": "x轴",
+                        "inputType": "array",
+                        "inputProps": {
+                            "itemInputType": "text",
+                            "itemDefault": "",
+                            "itemInputProps": {
+                                "random": true
+                            }
+                        },
+                        "default": []
+                    },
+                    "series": {
+                        "label": "柱状项",
+                        "inputType": "array",
+                        "inputProps": {
+                            "itemInputType": "object",
+                            "itemDefault": {},
+                            "itemInputProps": {
+                                "props": {
+                                    "name": {
+                                        "label": "名称",
+                                        "inputType": "text",
+                                        "inputProps": {
+                                            "random": true
+                                        },
+                                        "default": ""
+                                    },
+                                    "data": {
+                                        "label": "值",
+                                        "inputType": "array",
+                                        "inputProps": {
+                                            "itemInputType": "number",
+                                            "itemDefault": "",
+                                            "itemInputProps": {
+                                                "random": true,
+                                                "randomLength": 2
+                                            }
+                                        },
+                                        "default": []
+                                    }
+                                }
+                            }
+                        },
+                        "default": []
+                    }
+                }
+            },
+            "default": {
+                "categories": ["2016", "2017", "2018", "2019"],
+                "series": [{
+                        "name": "目标值",
+                        "data": [35, 36, 31, 33]
+                    },
+                    {
+                        "name": "完成量",
+                        "data": [18, 27, 21, 24]
+                    }
+                ]
+            }
+        },
+        {
+            "label": "柱状图配置",
+            "description": "",
+            "key": "column",
+            "type": "Object",
+            "inputType": "object",
+            "inputProps": {
+                "props": {
+                    "type": {
+                        "label": "类型",
+                        "inputType": "select",
+                        "default": "group",
+                        "inputProps": {
+                            "options": [
+                                { "label": "分组柱状图", "value": "group" },
+                                { "label": "堆叠柱状图", "value": "stack" },
+                                { "label": "温度计式图", "value": "meter" }
+                            ]
+                        }
+                    },
+                    "width": {
+                        "label": "柱子的图形宽度",
+                        "inputType": "number",
+                        "default": ""
+                    },
+                    "seriesGap": {
+                        "label": "柱子之间的间距",
+                        "inputType": "number",
+                        "default": ""
+                    },
+                    "categoryGap": {
+                        "label": "每个category点位（X轴点）柱子组之间的间距",
+                        "inputType": "number",
+                        "default": ""
+                    },
+                    "barBorderCircle": {
+                        "label": "启用分组柱状图半圆边框",
+                        "inputType": "boolean",
+                        "default": false
+                    },
+                    "barBorderRadius": {
+                        "label": "自定义4个圆角半径",
+                        "inputType": "array",
+                        "default": [0,0,0,0],
+                        "inputProps": {
+                            "itemInputType": "number",
+                            "itemInputProps": {},
+                            "itemDefault": 0,
+                            "maxlength": 4,
+                            "minlength": 4
+                        }
+                    },
+                    "linearType": {
+                        "label": "渐变类型",
+                        "inputType": "select",
+                        "default": "none",
+                        "inputProps": {
+                            "options": [
+                                { "label": "关闭渐变", "value": "group" },
+                                { "label": "透明渐变", "value": "opacity" },
+                                { "label": "自定义颜色", "value": "custom" }
+                            ]
+                        }
+                    },
+                    "linearOpacity": {
+                        "label": "透明渐变的透明度",
+                        "inputType": "number",
+                        "default": 1,
+                        "must": {
+                            "key": "linearType",
+                            "value": ["opacity", "custom"]
+                        },
+                        "inputProps": {
+                            "max": 1,
+                            "min": 0,
+                            "step": 0.01
+                        }
+                    },
+                    "customColor": {
+                        "label": "自定义渐变颜色",
+                        "description": "数组类型对应series的数组长度以匹配不同series颜色的不同配色方案，例如[\"#FA7D8D\", \"#EB88E2\"]",
+                        "inputType": "array",
+                        "default": [],
+                        "must": {
+                            "key": "linearType",
+                            "value": ["opacity", "custom"]
+                        },
+                        "inputProps": {
+                            "itemInputType": "color",
+                            "itemDefault": "",
+                            "itemInputProps": {
+                                "colorFormat": "hex",
+                                "hexOutputOpacity": false
+                            }
+                        }
+                    },
+                    "colorStop": {
+                        "label": "渐变色的显示比例",
+                        "inputType": "number",
+                        "default": 0.5,
+                        "must": {
+                            "key": "linearType",
+                            "value": ["opacity", "custom"]
+                        },
+                        "inputProps": {
+                            "max": 1,
+                            "min": 0,
+                            "step": 0.01
+                        }
+                    },
+                    "meterBorder": {
+                        "label": "温度计式图表的边框宽度",
+                        "inputType": "number",
+                        "default": 1,
+                        "must": {
+                            "key": "linearType",
+                            "value": ["meter"]
+                        }
+                    },
+                    "meterFillColor": {
+                        "label": "温度计式图表的空余填充颜色",
+                        "inputType": "color",
+                        "default": "#FFFFFF",
+                        "must": {
+                            "key": "linearType",
+                            "value": ["meter"]
+                        },
+                        "inputProps": {
+                            "colorFormat": "hex",
+                            "hexOutputOpacity": false
+                        }
+                    },
+                    "activeBgColor": {
+                        "label": "温度计式图表的空余填充颜色",
+                        "inputType": "color",
+                        "default": "#000000",
+                        "inputProps": {
+                            "colorFormat": "hex",
+                            "hexOutputOpacity": false
+                        }
+                    },
+                    "activeBgOpacity": {
+                        "label": "当前点击柱状图的背景颜色透明度",
+                        "inputType": "number",
+                        "default": 0.08,
+                        "inputProps": {
+                            "max": 1,
+                            "min": 0,
+                            "step": 0.01
+                        }
+                    },
+                    "labelPosition": {
+                        "label": "数据标签位置",
+                        "inputType": "select",
+                        "default": "outside",
+                        "inputProps": {
+                            "options": [
+                                { "label": "外部", "value": "outside" },
+                                { "label": "内顶部", "value": "insideTop" },
+                                { "label": "内中间", "value": "center" },
+                                { "label": "内底部", "value": "bottom" }
+                            ]
+                        }
+                    }
+                }
+            },
+            "default": {
+                "type": "group",
+                "width": 30,
+                "activeBgColor": "#000000",
+                "activeBgOpacity": 0.08
+            }
+        },
+        {
+            "label": "图表颜色组",
+            "description": "",
+            "key": "optsColor",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": ["#1890FF", "#91CB74", "#FAC858", "#EE6666", "#73C0DE", "#3CA272", "#FC8452", "#9A60B4", "#ea7ccc"]
+        },
+        {
+            "label": "图表距离",
+            "description": "图表距离四周的间隔",
+            "key": "optsPadding",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": [15, 15, 0, 15]
+        },
+        {
+            "label": "图例配置",
+            "description": "",
+            "key": "optsLegend",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "show": true,
+                "position": "bottom",
+                "float": "bottom",
+                "padding": "5",
+                "margin": "5",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#ffffff",
+                "borderWidth": 0,
+                "fontSize": 13,
+                "fontColor": "#666666",
+                "lineHeight": 11,
+                "hiddenColor": "#CECECE",
+                "itemGap": 10
+            }
+        },
+        {
+            "label": "X轴配置",
+            "description": "",
+            "key": "optsXAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        },
+        {
+            "label": "Y轴配置",
+            "description": "",
+            "key": "optsYAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        }
+    ],
+    "events": []
+}

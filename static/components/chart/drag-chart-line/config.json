@@ -1,0 +1,98 @@
+{
+    "componentName": "drag-chart-line",
+    "name": "折线图",
+    "description": "",
+    "customHandleStyle": true,
+    "order": 3,
+    "props": [{
+            "label": "图表数据",
+            "description": "",
+            "key": "chartData",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "categories": ["2016", "2017", "2018", "2019", "2020", "2021"],
+                "series": [{
+                        "name": "成交量A",
+                        "data": [35, 8, 25, 37, 4, 20]
+                    },
+                    {
+                        "name": "成交量B",
+                        "data": [70, 40, 65, 100, 44, 68]
+                    },
+                    {
+                        "name": "成交量C",
+                        "data": [100, 80, 95, 150, 112, 132]
+                    }
+                ]
+            }
+        },
+        {
+            "label": "图表配置",
+            "description": "",
+            "key": "line",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "type": "straight",
+                "width": 2,
+                "activeType": "hollow"
+            }
+        },
+        {
+            "label": "图表颜色组",
+            "description": "",
+            "key": "optsColor",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": ["#1890FF", "#91CB74", "#FAC858", "#EE6666", "#73C0DE", "#3CA272", "#FC8452", "#9A60B4", "#ea7ccc"]
+        },
+        {
+            "label": "图表距离",
+            "description": "图表距离四周的间隔",
+            "key": "optsPadding",
+            "type": "Array",
+            "inputType": "jsonEditor",
+            "default": [15, 15, 0, 15]
+        },
+        {
+            "label": "图例配置",
+            "description": "",
+            "key": "optsLegend",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {
+                "show": true,
+                "position": "bottom",
+                "float": "bottom",
+                "padding": "5",
+                "margin": "5",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#ffffff",
+                "borderWidth": 0,
+                "fontSize": 13,
+                "fontColor": "#666666",
+                "lineHeight": 11,
+                "hiddenColor": "#CECECE",
+                "itemGap": 10
+            }
+        },
+        {
+            "label": "X轴配置",
+            "description": "",
+            "key": "optsXAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        },
+        {
+            "label": "Y轴配置",
+            "description": "",
+            "key": "optsYAxis",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": {}
+        }
+    ],
+    "events": []
+}

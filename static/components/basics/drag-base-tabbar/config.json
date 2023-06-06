@@ -1,0 +1,16 @@
+{
+    "componentName": "drag-base-tabbar",
+    "name": "tabbar",
+    "description": "tabbar",
+    "disabled": true,
+    "order": "1000",
+    "props": [{
+        "label": "tabbar列表",
+        "description": "tabbar列表",
+        "key": "tabbarData",
+        "type": "Object",
+        "inputType": "tabbar",
+        "default": {}
+    }],
+    "events": []
+}

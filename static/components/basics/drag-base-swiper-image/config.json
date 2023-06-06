@@ -1,0 +1,245 @@
+{
+    "componentName": "drag-base-swiper-image",
+    "name": "轮播",
+    "description": "轮播图",
+    "order": "3",
+    "props": [{
+            "label": "图片列表",
+            "description": "图片列表",
+            "classify": "数据",
+            "key": "list",
+            "type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "image",
+                "itemInputProps": {},
+                "itemDefault": ""
+            },
+            "default": [
+                "http://img.lemeitu.com/m00/a0/5c/ffc3c39d289296db3b97effa924d4bb6__w.jpg",
+                "http://img.lemeitu.com/m00/2d/34/ef812ef475af89c643b0111e66d8ff00__w.jpg"
+            ]
+        }, 
+        {
+        	"label": "键名",
+            "classify": "数据",
+        	"description": "如list属性为数组对象格式，将以此键名读取对象属性作为菜单名称",
+        	"key": "keyName",
+        	"type": "String",
+        	"default": ""
+        },
+        {
+            "label": "图片裁剪缩放模式",
+            "description": "图片裁剪、缩放的模式",
+            "classify": "样式",
+            "key": "imgMode",
+            "type": "String",
+            "default": "aspectFill",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "imageMode"
+            }
+        },
+        {
+            "label": "组件高度",
+            "description": "",
+            "classify": "样式",
+            "key": "height",
+            "type": "String",
+            "default": "130px",
+            "inputType": "size"
+        },
+        {
+            "label": "组件圆角",
+            "description": "",
+            "classify": "样式",
+            "key": "radius",
+            "type": "String",
+            "default": "4px",
+            "inputType": "size"
+        },
+        {
+            "label": "图片前边距",
+            "classify": "样式",
+            "description": "可用于露出前一项的一小部分，nvue和支付宝不支持",
+            "key": "previousMargin",
+            "type": "String",
+            "default": "0rpx",
+            "inputType": "size"
+        },
+        {
+            "label": "图片后边距",
+            "classify": "样式",
+            "description": "可用于露出后一项的一小部分，nvue和支付宝不支持",
+            "key": "nextMargin",
+            "type": "String",
+            "default": "0rpx",
+            "inputType": "size"
+        },
+        {
+            "label": "背景颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "bgColor",
+            "type": "String",
+            "default": "#f3f4f6",
+            "inputType": "color"
+        },
+        {
+            "label": "加载中",
+            "description": "",
+            "classify": "功能",
+            "key": "loading",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "指示点",
+            "description": "是否显示面板指示点",
+            "classify": "功能",
+            "key": "indicator",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "自动切换",
+            "classify": "功能",
+            "description": "是否自动切换",
+            "key": "autoplay",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "衔接滑动",
+            "classify": "功能",
+            "description": "是否采用衔接滑动，即播放到末尾后重新回到开头",
+            "key": "circular",
+            "type": "Boolean",
+            "default": true
+        }, 
+        {
+            "label": "指示点类型",
+            "classify": "功能",
+            "description": "",
+            "key": "indicatorMode",
+            "type": "String",
+            "default": "line",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    {"label": "线条", "value": "line"},
+                    {"label": "点", "value": "dot"}
+                ]
+            }
+        },
+        {
+            "label": "指示默认点颜色",
+            "classify": "样式",
+            "description": "指示点默认颜色",
+            "key": "indicatorInactiveColor",
+            "type": "String",
+            "default": "rgba(0, 0, 0, .5)",
+            "inputType": "color",
+            "must": {
+                "key": "indicator",
+                "value": [true]
+            }
+        },
+        {
+            "label": "指示点选中颜色",
+            "classify": "样式",
+            "description": "当前选中的指示点颜色",
+            "key": "indicatorActiveColor",
+            "type": "String",
+            "default": "#409EFF",
+            "inputType": "color",
+            "must": {
+                "key": "indicator",
+                "value": [true]
+            }
+        },
+        {
+            "label": "滑动方向",
+            "description": "滑动方向是否为纵向",
+            "classify": "功能",
+            "key": "vertical",
+            "type": "Boolean",
+            "default": false,
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "横向", "value": false },
+                    { "label": "纵向", "value": true }
+                ]
+            }
+        },
+        {
+            "label": "当前所在滑块的index",
+            "classify": "功能",
+            "description": "当前所在滑块的 index",
+            "key": "current",
+            "type": "Number",
+            "default": 0
+        },
+        {
+            "label": "自动切换时间间隔",
+            "classify": "功能",
+            "description": "自动切换时间间隔",
+            "key": "interval",
+            "type": "Number",
+            "default": 3000,
+            "inputProps": {
+                "suffixText": "ms"
+            }
+        },
+        {
+            "label": "滑动动画时长",
+            "classify": "功能",
+            "description": "滑动动画时长",
+            "key": "duration",
+            "type": "Number",
+            "default": 500,
+            "inputProps": {
+                "suffixText": "ms"
+            }
+        },
+        {
+            "label": "同时显示的滑块数量",
+            "classify": "功能",
+            "description": "nvue、支付宝小程序不支持",
+            "key": "displayMultipleItems",
+            "type": "Number",
+            "default": 1,
+            "inputType": "number"
+        },
+        {
+            "label": "缓动动画类型",
+            "description": "仅支持微信小程序",
+            "key": "easingFunction",
+            "classify": "功能",
+            "type": "String",
+            "default": "default",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "默认", "value": "default" },
+                    { "label": "线性", "value": "linear" },
+                    { "label": "缓入动画", "value": "easeInCubic" },
+                    { "label": "缓出动画", "value": "easeOutCubic" },
+                    { "label": "缓入缓出动画", "value": "easeInOutCubic" }
+                ]
+            }
+        }
+    ],
+    "events": [{
+        "label": "滑动改变事件",
+        "key": "change",
+        "description": "current 改变时会触发 change 事件，event.detail = {current: current, source: source}",
+        "params": []
+    },{
+        "label": "图片点击事件，$event将会返回图片所在index",
+        "key": "click",
+        "description": "",
+        "params": []
+    }]
+}

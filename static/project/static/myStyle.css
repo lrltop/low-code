@@ -1,0 +1,268 @@
+body {
+    background-color: #f1f1f1;
+    font-size: 28rpx;
+    color: #333333;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+div,
+view,
+scroll-view,
+swiper,
+button,
+input,
+textarea,
+label,
+navigator,
+image {
+    box-sizing: border-box;
+}
+
+image {
+	max-width: 100%;
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+}
+
+image.loading::before {
+	content: "";
+	background-color: #f5f5f5;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+}
+
+image.loading::after {
+	content: "\e7f1";
+	font-family: "cuIcon";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32rpx;
+	height: 32rpx;
+	line-height: 32rpx;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	font-size: 32rpx;
+	margin: auto;
+	color: #ccc;
+	-webkit-animation: cuIcon-spin 2s infinite linear;
+	animation: cuIcon-spin 2s infinite linear;
+	display: block;
+}
+
+.response {
+	width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-direction {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-sub {
+    flex: 1;
+}
+.flex-twice {
+    flex: 2;
+}
+.flex-treble {
+    flex: 3;
+}
+.flex-four {
+    flex: 4;
+}
+
+.flex-five {
+    flex: 5;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+.margin-0 {
+    margin: 0;
+}
+.padding-0 {
+    padding: 0;
+}
+.phone-width {
+    width: 375px;
+}
+
+.tool {
+    .el-color-picker__trigger {
+        border: none !important;
+    }
+}
+
+.box-card {
+    .el-select {
+        width: 150px;
+    }
+}
+
+.my-none-el-popover {
+    min-width: 0 !important;
+}
+
+.cu-form-group {
+	background-color: #ffffff;
+	padding: 10rpx 30rpx;
+	display: flex;
+	align-items: center;
+    min-height: 80rpx;
+}
+
+.cu-form-group+.cu-form-group {
+	border-top: 1rpx solid #eee;
+}
+
+.cu-form-group .title {
+	font-size: 30rpx;
+	position: relative;
+    flex-shrink: 0;
+    width: 120rpx;
+    margin-right: 20rpx;
+}
+.cu-form-group.align-start .title {
+	height: 1em;
+	margin-top: 32rpx;
+	line-height: 1em;
+}
+[class*="cuIcon-"] {
+	font-family: "cuIcon";
+	font-size: inherit;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "cuIcon";
+	src: url('//at.alicdn.com/t/font_533566_yfq2d9wdij.eot?t=1545239985831');
+	/* IE9*/
+	src: url('//at.alicdn.com/t/font_533566_yfq2d9wdij.eot?t=1545239985831#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('//at.alicdn.com/t/font_533566_yfq2d9wdij.ttf?t=1545239985831') format('truetype'),
+		/* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+		url('//at.alicdn.com/t/font_533566_yfq2d9wdij.svg?t=1545239985831#cuIconfont') format('svg');
+	/* iOS 4.1- */
+}
+
+@keyframes cuIcon-spin {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+
+.cuIconfont-spin {
+	-webkit-animation: cuIcon-spin 2s infinite linear;
+	animation: cuIcon-spin 2s infinite linear;
+	display: inline-block;
+}
+
+.cuIconfont-pulse {
+	-webkit-animation: cuIcon-spin 1s infinite steps(8);
+	animation: cuIcon-spin 1s infinite steps(8);
+	display: inline-block;
+}
+
+.cuIcon-attentionfill:before {
+	content: "\e73c";
+}
+
+.cuIcon-appreciatefill:before {
+	content: "\e6e3";
+}
+
+.cuIcon-messagefill:before {
+	content: "\e779";
+}
+
+.cuIcon-appreciate:before {
+	content: "\e644";
+}
+
+.cuIcon-circlefill:before {
+	content: "\e7b0";
+}
+
+.cuIcon-btn:before {
+	content: "\e601";
+}
+
+.cuIcon-discoverfill:before {
+	content: "\e6ba";
+}
+
+.cuIcon-emojiflashfill:before {
+	content: "\e78e";
+}
+
+.cuIcon-upload:before {
+	content: "\e75d";
+}
+
+.cuIcon-tagfill:before {
+	content: "\e751";
+}
+
+.cuIcon-warnfill:before {
+	content: "\e662";
+}
+
+.cuIcon-warn:before {
+	content: "\e663";
+}
+
+.cuIcon-clothesfill:before {
+	content: "\e716";
+}
+
+
+.cuIcon-infofill:before {
+    content: "\e6e4";
+}
+
+.cuIcon-noticefill:before {
+	content: "\e709";
+}
+
+.cuIcon-attentionforbidfill:before {
+	content: "\e7b3";
+}
+
+.cuIcon-evaluate_fill:before {
+	content: "\e7f0";
+}
+
+.cuIcon-close:before {
+	content: "\e646";
+}
+
+.cuIcon-cameraaddfill:before {
+	content: "\e727";
+}
+
+.cuIcon-cameraadd:before {
+	content: "\e724";
+}
+
+.uni-input-placeholder{
+    color: #c3c4cf;
+}

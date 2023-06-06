@@ -1,0 +1,48 @@
+{
+    "componentName": "drag-navigation-navbar",
+    "name": "自定义导航栏",
+    "description": "",
+    "canvasSelectedMode": "cover",
+    "customHandleStyle":true,
+    "props": [{
+        "label": "导航栏标题",
+        "description": "",
+        "key": "title",
+        "type": "String",
+        "default": "导航栏标题",
+        "must": {
+            "key": "customTitle",
+            "value": [false]
+        }
+    }, {
+        "label": "自定义导航栏标题",
+        "description": "自定义导航栏标题部分",
+        "key": "customTitle",
+        "type": "Boolean",
+        "default": false
+    }, {
+        "label": "显示返回按钮",
+        "description": "是否显示右侧返回按钮",
+        "key": "isBackShow",
+        "type": "Boolean",
+        "default": true
+    }, {
+        "label": "背景颜色",
+        "description": "背景颜色",
+        "key": "bgColor",
+        "type": "Boolean",
+        "default": "#ffffff",
+        "inputType": "color"
+    }, {
+        "label": "高度",
+        "description": "导航栏高度",
+        "key": "height",
+        "type": "String",
+        "default": "44px"
+    }],
+    "events": [],
+    "slot": {
+        "center": "组件标题部分",
+        "right": "自定义右侧部分内容"
+    }
+}

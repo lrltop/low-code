@@ -1,0 +1,117 @@
+{
+	"componentName": "drag-navigation-tabs",
+	"name": "tab选项卡",
+	"description": "tabs标签组件，在标签多的时候，可以配置为左右滑动，标签少的时候，可以禁止滑动。 该组件的一个特点是配置为滚动模式时，激活的tab会自动移动到组件的中间位置",
+    "order": "1",
+	"props": [
+		{
+			"label": "菜单选项",
+			"description": "",
+			"key": "list",
+			"type": "Array",
+            "inputType": "array",
+            "inputProps": {
+                "minlength": 1,
+                "itemInputType": "object",
+                "itemInputDefault": {},
+                "itemInputProps": {
+                    "props": {
+                        "text": {
+                            "label": "标题",
+                            "inputType": "text",
+                            "default": "菜单"
+                        }
+                    }
+                }
+            },
+			"default": [
+                {"text": "菜单1"},
+                {"text": "菜单2"},
+                {"text": "菜单3"},
+                {"text": "菜单4"}
+            ]
+		},
+        {
+        	"label": "菜单可滚动",
+        	"description": "",
+        	"key": "scrollable",
+        	"type": "Boolean",
+        	"default": false
+        },
+		{
+			"label": "滑块移动一次所需的时间",
+			"description": "",
+			"key": "duration",
+			"type": "Number",
+			"default": 300,
+            "inputProps": {
+                "suffixText": "ms"
+            }
+		},
+		{
+			"label": "当前选中索引",
+			"description": "为索引，以0开始",
+			"key": "current",
+			"type": "Number",
+			"default": 0
+		},
+		{
+			"label": "滑块长度",
+			"description": "",
+			"key": "lineWidth",
+			"type": "String",
+			"default": "20px",
+			"inputType": "size"
+		},
+		{
+			"label": "滑块高度",
+			"description": "",
+			"key": "lineHeight",
+			"type": "String",
+			"default": "3px",
+			"inputType": "size"
+		},
+		{
+			"label": "选中文字颜色",
+			"description": "",
+			"key": "activeTextColor",
+			"type": "String",
+			"default": "rgb(48, 49, 51)",
+			"inputType": "color"
+		},
+		{
+			"label": "默认文字颜色",
+			"description": "",
+			"key": "inactiveTextColor",
+			"type": "String",
+			"default": "#606266",
+			"inputType": "color"
+		},
+		{
+			"label": "滑块颜色",
+			"description": "",
+			"key": "lineColor",
+			"type": "String",
+			"default": "#3c9cff",
+			"inputType": "color"
+		}
+	],
+	"events": [
+		{
+			"label": "点击标签时触发，$event为{ index: 标签索引值，item: 当前索引对应的选项数据 }",
+			"key": "click",
+			"description": "",
+			"params": []
+		},
+        {
+        	"label": "标签索引改变时触发，$event为{ index: 标签索引值，item: 当前索引对应的选项数据 }",
+        	"key": "change",
+        	"description": "",
+        	"params": []
+        }
+	],
+    "slot": {
+        "vForPrefix": "slot-",
+        "vForProps": "list"
+    }
+}

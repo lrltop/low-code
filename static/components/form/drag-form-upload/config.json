@@ -1,0 +1,220 @@
+{
+    "componentName": "drag-form-upload",
+    "disabled": false,
+    "name": "文件上传",
+    "description": "",
+    "canvasSelectedMode": "cover",
+    "props": [{
+            "label": "标题",
+            "description": "",
+            "key": "labelText",
+            "type": "String",
+            "default": "图片上传"
+        },
+        {
+            "label": "文件类型",
+            "description": "接受的文件类型，file只支持H5（只有微信小程序才支持把accept配置为all、media）",
+            "key": "accept",
+            "type": "String",
+            "default": "image",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "图片", "value": "image" },
+                    { "label": "视频", "value": "video" },
+                    { "label": "文件（仅H5）", "value": "file" },
+                    { "label": "所有类型（仅小程序）", "value": "all" },
+                    { "label": "媒体文件（仅小程序）", "value": "media" }
+                ]
+            }
+        },
+        {
+            "label": "压缩视频",
+            "description": "是否压缩视频",
+            "key": "compressed",
+            "type": "Boolean",
+            "default": true,
+            "must": {
+                "key": "accept",
+                "value": ["video"]
+            }
+        },
+        {
+            "label": "视频拍摄",
+            "description": "是否压缩视频",
+            "key": "camera",
+            "type": "String",
+            "default": "back",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "前摄像头", "value": "front" },
+                    { "label": "后摄像头", "value": "back" }
+                ]
+            },
+            "must": {
+                "key": "accept",
+                "value": ["video"]
+            }
+        },
+        {
+            "label": "视频最长时间",
+            "description": "拍摄视频最长拍摄时间",
+            "key": "maxDuration",
+            "type": "Number",
+            "default": 60,
+            "must": {
+                "key": "accept",
+                "value": ["video"]
+            }
+        },
+        {
+            "label": "文件上传路径",
+            "description": "文件上传api的路径",
+            "key": "actionUrl",
+            "type": "String",
+            "inputType": "api",
+            "default": ""
+        },
+        {
+            "label": "显示的图片列表",
+            "description": "默认显示的图片列表，数组元素为对象，必须提供url属性",
+            "key": "fileList",
+            "type": "Array",
+            "default": [],
+            "inputType": "dataName"
+        },
+        {
+            "label": "最大图片数量",
+            "description": "最大选择图片的数量",
+            "key": "maxCount",
+            "type": "Number",
+            "inputType": "number",
+            "default": 1
+        },
+        {
+            "label": "宽度",
+            "description": "图片预览区域和添加图片按钮的宽度，单位rpx，不能是百分比，或者auto",
+            "key": "width",
+            "type": "Number",
+            "inputType": "number",
+            "default": "80"
+        },
+        {
+            "label": "高度",
+            "description": "图片预览区域和添加图片按钮的高度，单位rpx，不能是百分比，或者auto",
+            "key": "height",
+            "type": "Number",
+            "inputType": "number",
+            "default": "80"
+        },
+        {
+            "label": "预览图模式",
+            "description": "预览图片等显示模式，可选值为uni的image的mode属性值",
+            "key": "imageMode",
+            "type": "String",
+            "default": "widthFix",
+            "inputType": "select",
+            "inputProps": {
+                "sectionMode": "imageMode"
+            }
+        },
+        {
+            "label": "上传请求头",
+            "description": "上传携带的头信息，对象形式",
+            "key": "header",
+            "type": "Object",
+            "default": {},
+            "inputType": "jsonEditor"
+        },
+        {
+            "label": "上传参数",
+            "description": "上传额外携带的参数",
+            "key": "formData",
+            "type": "Object",
+            "default": {},
+            "inputType": "jsonEditor"
+        },
+        {
+            "label": "上传文件字段名",
+            "description": "上传文件的字段名，供后端获取使用",
+            "key": "name",
+            "type": "String",
+            "default": "file"
+        },
+        {
+            "label": "图片质量",
+            "description": "original 原图，compressed 压缩图，默认二者都有，H5无效",
+            "key": "sizeType",
+            "type": "String",
+            "default": "both",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "二者兼有", "value": "both" },
+                    { "label": "原图模式", "value": "original" },
+                    { "label": "压缩模式", "value": "compressed" }
+                ]
+            }
+        },
+        {
+            "label": "图片的来源",
+            "description": "选择图片的来源，album-从相册选图，camera-使用相机，默认二者都有",
+            "key": "capture",
+            "type": "String",
+            "default": "both",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "二者兼有", "value": "both" },
+                    { "label": "仅相册", "value": "album" },
+                    { "label": "仅相机", "value": "camera" }
+                ]
+            }
+        },
+        {
+            "label": "图片多选",
+            "description": "是否开启图片多选，部分安卓机型不支持",
+            "key": "multiple",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "删除图片按钮",
+            "description": "是否显示删除图片的按钮",
+            "key": "deletable",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "最大文件大小",
+            "description": "选择单个文件的最大大小，单位mb",
+            "key": "maxSize",
+            "type": "Number",
+            "default": 10,
+            "inputProps": {
+                "suffixText": "MB"
+            }
+        },
+        {
+            "label": "提示文字",
+            "description": "选择图片按钮的提示文字",
+            "key": "uploadText",
+            "type": "String",
+            "default": "选择图片"
+        }
+    ],
+    "events": [{
+            "label": "上传成功",
+            "key": "uploadSuccess",
+            "description": "图片上传成功时触发",
+            "params": []
+        },
+        {
+            "label": "移除图片",
+            "key": "uploadFileRemove",
+            "description": "移除图片时触发",
+            "params": []
+        }
+    ]
+}

@@ -1,0 +1,211 @@
+{
+    "componentName": "drag-form-radio",
+    "name": "单选",
+    "description": "",
+    "order": "1",
+    "props": [{
+            "label": "双向绑定",
+            "description": "",
+            "key": "v-model",
+            "type": "String",
+            "default": ""
+        },
+        {
+            "label": "选项数据",
+            "classify": "数据",
+            "description": "",
+            "key": "columns",
+            "type": "Array",
+            "inputType": "datacom",
+            "inputProps": {
+                "levelCount": 1
+            },
+            "default": [{
+                    "value": "1",
+                    "text": "选项1"
+                },
+                {
+                    "value": "2",
+                    "text": "选项2"
+                }
+            ]
+        },
+        {
+            "label": "标题",
+            "classify": "功能",
+            "description": "",
+            "key": "labelText",
+            "type": "String",
+            "default": "单选"
+        },
+        {
+        	"label": "布局方式",
+        	"description": "",
+            "classify": "样式",
+        	"key": "placement",
+        	"type": "String",
+        	"default": "row",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "横向", "value": "row"},
+                    { "label": "竖向", "value": "column"}
+                ]
+            }
+        },
+        {
+        	"label": "图标形状",
+        	"description": "",
+            "classify": "样式",
+        	"key": "shape",
+        	"type": "String",
+        	"default": "square",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "圆形", "value": "circle"},
+                    { "label": "方形", "value": "square"}
+                ]
+            }
+        },
+        {
+        	"label": "勾选图标对齐方式",
+        	"description": "",
+            "classify": "样式",
+        	"key": "iconPlacement",
+        	"type": "String",
+        	"default": "left",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左边", "value": "left"},
+                    { "label": "右边", "value": "right"}
+                ]
+            }
+        },
+        {
+            "label": "禁用",
+            "description": "",
+            "classify": "功能",
+            "key": "disabled",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "整体大小",
+            "description": "",
+            "classify": "样式",
+            "key": "size",
+            "type": "String",
+            "inputType": "size",
+            "default": "36rpx"
+        },
+        {
+        	"label": "选项宽度",
+            "classify": "样式",
+        	"description": "-1 为自动撑开",
+        	"key": "labelWidth",
+        	"type": "Number",
+        	"default": -1,
+            "inputType": "number",
+            "inputProps": {
+                "suffixText": "rpx"
+            }
+        },
+        {
+        	"label": "选项上下距离",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelMargin",
+        	"type": "Number",
+        	"default": 5,
+            "inputType": "number",
+            "inputProps": {
+                "suffixText": "rpx"
+            }
+        },
+        {
+        	"label": "框内图标大小",
+        	"description": "",
+            "classify": "样式",
+        	"key": "iconSize",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "12"
+        },
+        {
+        	"label": "label字体大小",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelSize",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "14px",
+            "sectionMode": "fontSize"
+        },
+        {
+            "label": "框内图标颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "iconColor",
+            "type": "Number",
+            "inputType": "color",
+            "default": "#ffffff"
+        },
+        {
+            "label": "选中颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "activeColor",
+            "type": "String",
+            "inputType": "color",
+            "default": "#2979ff"
+        },
+        {
+            "label": "默认颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "inactiveColor",
+            "type": "String",
+            "inputType": "color",
+            "default": "#c8c9cc"
+        },
+        {
+            "label": "文字颜色",
+            "description": "",
+            "classify": "样式",
+            "key": "labelColor",
+            "type": "Number",
+            "inputType": "color",
+            "default": "#303133"
+        },
+        {
+            "label": "禁止点击文本操作",
+            "description": "",
+            "classify": "功能",
+            "key": "labelDisabled",
+            "type": "Boolean",
+            "default": false
+        },
+        {
+            "label": "下划线",
+            "description": "",
+            "classify": "功能",
+            "key": "borderBottom",
+            "type": "Boolean",
+            "default": false,
+            "must": {
+                "key": "placement",
+                "value": ["column"]
+            }
+        }
+    ],
+    "events": [
+        {
+            "label": "切换事件",
+            "key": "change",
+            "description": "",
+            "params": []
+        }
+    ]
+}

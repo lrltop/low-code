@@ -1,0 +1,201 @@
+{
+    "componentName": "drag-form-form",
+    "name": "表单",
+    "description": "",
+    "order": 1,
+    "props": [{
+            "label": "表单配置",
+            "description": "",
+            "key": "formItemList",
+            "type": "Object",
+            "inputType": "jsonEditor",
+            "default": [{
+                "key": "mobile",
+                "label": "手机号",
+                "required": true,
+                "placeholder": "请输入手机号",
+                "validator": "mobile"
+            }, {
+                "key": "des",
+                "label": "摘要",
+                "placeholder": "请输入摘要",
+                "formType": "textarea"
+            }, {
+                "key": "categorize",
+                "label": "类别",
+                "required": true,
+                "message": "请选择类别",
+                "formType": "radio",
+                "rangeList": [{
+                    "label": "内购",
+                    "name": "inner"
+                }, {
+                    "label": "外销",
+                    "name": "outter"
+                }]
+            }, {
+                "key": "tag",
+                "label": "标签",
+                "required": true,
+                "message": "请选择标签",
+                "type": "array",
+                "formType": "checkbox",
+                "rangeList": [{
+                    "label": "经典",
+                    "name": "classic"
+                }, {
+                    "label": "流行",
+                    "name": "pop"
+                }, {
+                    "label": "定制",
+                    "name": "customized"
+                }]
+            }, {
+                "key": "tag2",
+                "label": "标签2",
+                "required": true,
+                "message": "请选择标签",
+                "formType": "picker",
+                "rangeList": [{
+                    "label": "经典",
+                    "name": "classic"
+                }, {
+                    "label": "流行",
+                    "name": "pop"
+                }, {
+                    "label": "定制",
+                    "name": "customized"
+                }]
+            }, {
+                "key": "calendar",
+                "label": "日期",
+                "mode": "range",
+                "required": true,
+                "message": "请选择日期",
+                "show": false,
+                "formType": "calendar"
+            }, {
+                "key": "date",
+                "label": "日期时间",
+                "mode": "datetime",
+                "required": true,
+                "message": "请选择日期时间",
+                "show": false,
+                "formType": "date"
+            }, {
+                "key": "count",
+                "label": "步进",
+                "formType": "numberBox"
+            }, {
+                "key": "isTop",
+                "label": "开关",
+                "formType": "switch"
+            }, {
+                "key": "count2",
+                "label": "滑块",
+                "formType": "slider"
+            }]
+        },
+        {
+            "label": "错误提示方式",
+            "description": "",
+            "key": "errorType",
+            "type": "String",
+            "default": "message",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "输入框下方用文字进行提示", "value": "message" },
+                    { "label": "下划线提示，需设置下划线边框", "value": "border-bottom" },
+                    { "label": "弹出错误信息", "value": "toast" },
+                    { "label": "不提示", "value": "none" }
+                ]
+            }
+        },
+        {
+            "label": "下划线边框",
+            "description": "是否显示表单域的下划线边框",
+            "key": "borderBottom",
+            "type": "Boolean",
+            "default": true
+        },
+        {
+            "label": "label的位置",
+            "description": "是否显示表单域的下划线边框",
+            "key": "labelPosition",
+            "type": "String",
+            "default": "left",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左边", "value": "left" },
+                    { "label": "上方", "value": "top" }
+                ]
+            }
+        },
+        {
+            "label": "label的宽度",
+            "description": "label的宽度",
+            "key": "labelWidth",
+            "type": "String",
+            "default": "130rpx",
+            "inputType": "size"
+        },
+        {
+            "label": "label对齐方式",
+            "description": "label字体的对齐方式",
+            "key": "labelAlign",
+            "type": "String",
+            "default": "left",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左边", "value": "left" },
+                    { "label": "右边", "value": "right" },
+                    { "label": "中间", "value": "center" }
+                ]
+            }
+        },
+        {
+            "label": "提交按钮文字",
+            "description": "",
+            "key": "buttonText",
+            "type": "String",
+            "default": "提交"
+        },
+        {
+            "label": "提交按钮颜色",
+            "description": "",
+            "key": "buttonType",
+            "type": "String",
+            "default": "primary",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "透明", "value": "default" },
+                    { "label": "镂空", "value": "info" },
+                    { "label": "蓝色", "value": "primary" },
+                    { "label": "绿色", "value": "success" },
+                    { "label": "黄色", "value": "warning" },
+                    { "label": "红色", "value": "error" }
+                ]
+            }
+        },
+        {
+            "label": "提交按钮置底",
+            "description": "是否将提交按钮置于页面底部",
+            "key": "buttonFixed",
+            "type": "Boolean",
+            "default": false
+        }
+    ],
+    "events": [{
+        "label": "表单提交",
+        "key": "submit",
+        "description": "",
+        "params": []
+    }],
+    "slot": {
+        "default": "内容"
+    }
+}

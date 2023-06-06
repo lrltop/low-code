@@ -1,0 +1,49 @@
+{
+	"componentName": "drag-base-text",
+	"name": "文本",
+	"description": "文本",
+    "order": "1",
+    "iStyle": {
+        "display": "inline"
+    },
+	"props": [
+		{
+			"label": "文本是否可选",
+			"description": "文本是否可选，仅支持App、H5、快手小程序",
+			"key": "selectable",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "文本内容",
+			"description": "文本内容",
+			"key": "text",
+			"type": "String",
+			"default": "文本内容"
+		},
+        {
+        	"label": "文字超出省略",
+        	"description": "文字行数限制，超出限制行显示省略符号",
+        	"key": "textEllipsis",
+        	"type": "String",
+        	"default": "none",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "不省略", "value": "none"},
+                    { "label": "1行", "value": "1"},
+                    { "label": "2行", "value": "2"},
+                    { "label": "3行", "value": "3"}
+                ]
+            }
+        }
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "点击事件",
+			"params": []
+		}
+	]
+}

@@ -1,0 +1,195 @@
+{
+	"componentName": "drag-form-number-box",
+	"name": "步进器",
+	"description": "",
+	"props": [
+		{
+			"label": "双向绑定",
+			"description": "",
+			"key": "v-model",
+			"type": "Number",
+			"default": ""
+		},
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "labelText",
+        	"type": "String",
+        	"default": "步进器"
+        },
+		{
+			"label": "输入最小值",
+			"description": "",
+            "classify": "功能",
+			"key": "min",
+			"type": "Number",
+			"default": 1
+		},
+		{
+			"label": "输入最大值",
+			"description": "",
+            "classify": "功能",
+			"key": "max",
+			"type": "Number",
+			"default": 9999999
+		},
+		{
+			"label": "加或减步长",
+			"description": "每次加或减的值，支持小数值",
+            "classify": "功能",
+			"key": "step",
+			"type": "Number",
+			"default": 1
+		},
+		{
+			"label": "显示的小数位数",
+			"description": "",
+            "classify": "功能",
+			"key": "decimalLength",
+			"type": "Number",
+			"default": ""
+		},
+        {
+        	"label": "光标与键盘的距离",
+        	"description": "可避免键盘遮挡输入框",
+        	"key": "cursorSpacing",
+            "classify": "功能",
+        	"type": "Number",
+        	"default": 100
+        },
+		{
+			"label": "只能输入正整数",
+			"description": "",
+            "classify": "功能",
+			"key": "integer",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "禁用操作",
+			"description": "包括输入框，加减按钮",
+            "classify": "功能",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		},
+		{
+			"label": "只禁止输入框",
+            "classify": "功能",
+			"description": "",
+			"key": "disabledInput",
+			"type": "Boolean",
+			"default": false
+		},
+        {
+        	"label": "禁用增加按钮",
+            "classify": "功能",
+        	"description": "",
+        	"key": "disablePlus",
+        	"type": "Boolean",
+        	"default": false
+        },
+        {
+        	"label": "禁用减少按钮",
+        	"description": "",
+            "classify": "功能",
+        	"key": "disableMinus",
+        	"type": "Boolean",
+        	"default": false
+        },
+		{
+			"label": "显示减少按钮",
+			"description": "",
+            "classify": "功能",
+			"key": "showMinus",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "显示增加按钮",
+			"description": "",
+            "classify": "功能",
+			"key": "showPlus",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "允许长按进行加减",
+			"description": "",
+            "classify": "功能",
+			"key": "longPress",
+			"type": "Boolean",
+			"default": true
+		},
+		{
+			"label": "开启异步变更",
+			"description": "开启后需要通过change事件手动控制输入值",
+			"key": "asyncChange",
+            "classify": "功能",
+			"type": "Boolean",
+			"default": false
+		},
+        {
+        	"label": "输入框宽度",
+        	"description": "",
+            "classify": "样式",
+        	"key": "inputWidth",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "35px"
+        },
+        {
+        	"label": "按钮大小",
+        	"description": "宽高等于此值，单位px，输入框高度和此值保持一致",
+        	"key": "buttonSize",
+            "classify": "样式",
+        	"type": "String",
+            "inputType": "size",
+        	"default": "30px"
+        },
+        {
+        	"label": "文字和加减按钮颜色",
+        	"description": "",
+        	"key": "color",
+            "classify": "样式",
+        	"type": "String",
+            "inputType": "color",
+        	"default": "#323233"
+        },
+        {
+        	"label": "输入框和按钮的背景颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "bgColor",
+        	"type": "String",
+            "inputType": "color",
+        	"default": "#EBECEE"
+        }
+	],
+	"events": [
+        {
+        	"label": "输入框得到焦点触发",
+        	"key": "focus",
+        	"description": "",
+        	"params": []
+        },
+        {
+        	"label": "输入框失去焦点时触发",
+        	"key": "blur",
+        	"description": "",
+        	"params": []
+        },
+        {
+        	"label": "输入框内容发生变化时触发",
+        	"key": "change",
+        	"description": "",
+        	"params": []
+        },
+        {
+        	"label": "超过范围阈值时触发",
+        	"key": "overlimit",
+        	"description": "",
+        	"params": []
+        }
+	]
+}

@@ -1,0 +1,114 @@
+{
+	"componentName": "drag-navigation-steps",
+	"name": "步骤条",
+	"description": "",
+    "order": "3",
+	"props": [
+		{
+			"label": "选项",
+			"description": "",
+			"key": "list",
+			"type": "Array",
+            "inputType": "Array",
+            "inputProps": {
+                "itemInputType": "object",
+                "itemDefault": {},
+                "itemInputProps": {
+                    "props": {
+                        "title": {
+                            "label": "标题",
+                            "inputType": "text",
+                            "default": "步骤"
+                        },
+                        "desc": {
+                            "label": "描述",
+                            "inputType": "text",
+                            "default": ""
+                        },
+                        "error": {
+                            "label": "错误状态",
+                            "inputType": "boolean",
+                            "default": false
+                        }
+                    }
+                }
+            },
+			"default": [
+                {"title": "步骤1", "desc": "", "error": false},
+                {"title": "步骤2", "desc": "", "error": false},
+                {"title": "步骤3", "desc": "", "error": false}
+            ]
+		},
+		{
+			"label": "布局方向",
+			"description": "",
+			"key": "direction",
+			"type": "String",
+			"default": "row",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "横向", "value": "row"},
+                    { "label": "竖向", "value": "column"}
+                ]
+            }
+		},
+		{
+			"label": "当前处于第几步",
+			"description": "为索引，以0开始",
+			"key": "current",
+			"type": "Number",
+			"default": 0
+		},
+		{
+			"label": "激活状态颜色",
+			"description": "",
+			"key": "activeColor",
+			"type": "String",
+			"default": "#3c9cff",
+			"inputType": "color"
+		},
+		{
+			"label": "未激活状态颜色",
+			"description": "",
+			"key": "inactiveColor",
+			"type": "String",
+			"default": "#969799",
+			"inputType": "color"
+		},
+		{
+			"label": "激活状态图标",
+			"description": "uView图标",
+			"key": "activeIcon",
+			"type": "String",
+            "inputType": "uviewIcon",
+			"default": ""
+		},
+		{
+			"label": "未激活状态图标",
+			"description": "uView图标",
+			"key": "inactiveIcon",
+			"type": "String",
+            "inputType": "uviewIcon",
+			"default": ""
+		},
+		{
+			"label": "自定义图标大小",
+			"description": "仅对设置的激活和未激活图标有效",
+			"key": "iconSize",
+			"type": "String",
+			"default": "17px",
+			"inputType": "size"
+		},
+		{
+			"label": "显示点类型",
+			"description": "",
+			"key": "dot",
+			"type": "Boolean",
+			"default": false
+		}
+	],
+	"events": [
+		
+	]
+}

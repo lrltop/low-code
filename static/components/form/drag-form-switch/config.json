@@ -1,0 +1,100 @@
+{
+	"componentName": "drag-form-switch",
+	"name": "开关",
+	"description": "",
+	"props": [
+		{
+			"label": "双向绑定",
+			"description": "",
+			"key": "v-model",
+			"type": "String",
+			"default": ""
+		},
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "labelText",
+        	"type": "String",
+        	"default": "开关"
+        },
+        {
+        	"label": "标题宽度",
+        	"description": "",
+        	"key": "labelWidth",
+            "classify": "样式",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "120rpx"
+        },
+        {
+        	"label": "标题文字大小",
+        	"description": "",
+        	"key": "labelFontSize",
+            "classify": "样式",
+        	"type": "String",
+        	"inputType": "size",
+        	"default": "30rpx",
+            "sectionMode": "fontSize"
+        },
+        {
+        	"label": "标题文字颜色",
+        	"description": "",
+            "classify": "样式",
+        	"key": "labelColor",
+        	"type": "String",
+        	"inputType": "color",
+        	"default": "#333333"
+        },
+        {
+        	"label": "关闭文字",
+        	"description": "",
+        	"key": "leftText",
+        	"type": "String",
+        	"default": "打开"
+        },
+        {
+        	"label": "打开文字",
+        	"description": "",
+        	"key": "rightText",
+        	"type": "String",
+        	"default": "关闭"
+        },
+		{
+			"label": "禁用",
+			"description": "",
+			"key": "disabled",
+			"type": "Boolean",
+			"default": false
+		},
+        {
+        	"label": "内容排列位置",
+        	"description": "",
+        	"key": "contentAlign",
+        	"type": "String",
+        	"default": "flex-end",
+            "inputType": "select",
+            "inputProps": {
+                "options": [
+                    { "label": "左对齐", "value": "flex-start"},
+                    { "label": "居中", "value": "center"},
+                    { "label": "右对齐", "value": "flex-end"}
+                ]
+            }
+            
+        }
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "",
+			"params": []
+		},
+        {
+        	"label": "切换事件",
+        	"key": "change",
+        	"description": "",
+        	"params": []
+        }
+	]
+}

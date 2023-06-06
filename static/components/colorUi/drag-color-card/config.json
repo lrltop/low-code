@@ -1,0 +1,75 @@
+{
+	"componentName": "drag-color-card",
+	"name": "卡片",
+	"description": "卡片",
+	"props": [
+		{
+			"label": "标签",
+			"description": "",
+			"key": "tag",
+			"type": "String",
+			"default": "史诗"
+		},
+        {
+        	"label": "背景图片",
+        	"description": "可以使用网络图片",
+        	"key": "imageUrl",
+        	"type": "String",
+            "inputType": "image",
+        	"default": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ae87107-2943-4ba6-be2b-390ca27c6260.png"
+        },
+        {
+        	"label": "标题",
+        	"description": "",
+        	"key": "title",
+        	"type": "String",
+        	"default": "我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。"
+        },
+        {
+        	"label": "头像链接",
+        	"description": "可以使用网络图片",
+        	"key": "avatarUrl",
+        	"type": "String",
+            "inputType": "image",
+        	"default": "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c946930-bcf2-11ea-b997-9918a5dda011.png"
+        },
+        {
+        	"label": "用户名",
+        	"description": "",
+        	"key": "userName",
+        	"type": "String",
+        	"default": "正义天使"
+        },
+        {
+        	"label": "描述",
+        	"description": "",
+        	"key": "desc",
+        	"type": "String",
+        	"default": "十天前"
+        },
+        {
+        	"label": "查看数量",
+        	"description": "",
+        	"key": "showNum",
+        	"type": "Number",
+        	"default": 0
+        },
+        {
+        	"label": "点赞数量",
+        	"description": "",
+        	"key": "praiseNum",
+        	"type": "Number",
+        	"default": 0
+        },
+        {
+        	"label": "评论数量",
+        	"description": "",
+        	"key": "commentNum",
+        	"type": "Number",
+        	"default": 0
+        }
+	],
+	"events": [
+		
+	]
+}

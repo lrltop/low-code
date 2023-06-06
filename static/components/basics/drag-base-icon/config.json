@@ -1,0 +1,44 @@
+{
+	"componentName": "drag-base-icon",
+	"name": "图标",
+	"description": "图标",
+    "order": "2",
+    "iStyle": {
+        "display": "inline-block"
+    },
+	"props": [
+		{
+			"label": "图标类型",
+			"description": "图标类型",
+			"key": "type",
+			"type": "String",
+			"default": "hx-icon:hx-icon-gonggao",
+            "inputType": "icon"
+		},
+        {
+        	"label": "图标大小",
+        	"description": "图标大小（单位rpx）",
+        	"key": "size",
+        	"type": "String",
+        	"default": "32rpx",
+        	"inputType": "size",
+            "sectionMode": "fontSize"
+        },
+		{
+			"label": "图标颜色",
+			"description": "图标颜色(不支持彩色图标)",
+			"key": "color",
+			"type": "String",
+			"default": "#409EFF",
+			"inputType": "color"
+		}
+	],
+	"events": [
+		{
+			"label": "点击事件",
+			"key": "click",
+			"description": "点击事件",
+			"params": []
+		}
+	]
+}

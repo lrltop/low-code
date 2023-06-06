@@ -1,0 +1,7 @@
+{
+	"componentName": "drag-navigation-system-tabbar-item",
+	"name": "系统tabbar",
+    "disabled": true,
+	"props": [],
+	"events": []
+}
